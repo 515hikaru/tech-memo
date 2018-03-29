@@ -5,7 +5,7 @@ draft: false
 categories: ["Python", "Django", "Web App"]
 ---
 
-### Django とは
+# Django とは
 
 [Django](https://www.djangoproject.com/) とは, Python の Web フレームワークです. Ruby でいうところの Rails [^1]に相当するフレームワークで, Git ホスティングサービスの[Bitbucket](bitbucket.org) や最近「インスタ映え」で話題の Instagram にも利用されています[^2].
 
@@ -17,7 +17,7 @@ categories: ["Python", "Django", "Web App"]
 
 <!-- more -->
 
-### Form オブジェクト
+# Form オブジェクト
 
 Django には当然いくつもの機能があるのですが, 筆者が一番ググるのが表題の Form オブジェクトについてです.
 
