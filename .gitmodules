@@ -1,0 +1,7 @@
+[submodule "themes/hugo-future-imperfect"]
+	path = themes/hyde
+	url = https://github.com/jpescador/hugo-future-imperfect
+
+[submodule "public"]
+	path = public
+	url = https://github.com/515hikaru/515hikaru.github.io
