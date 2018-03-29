@@ -2,6 +2,7 @@
 title: "DjangoのFormオブジェクトの使い方Tips"
 date: 2017-12-28T00:00:00+09:00
 draft: false
+categories: ["Python", "Django", "Web App"]
 ---
 
 ### Django とは
@@ -36,7 +37,7 @@ Form オブジェクトは, 処理をするのに必要十分なデータが含�
 from django import forms
 
 class SampleForm(forms.Form):
-  
+
   def __init__(self, num, *args, **kwargs):
     super().__init__(*args, **kwargs)
     for i in range(num):
@@ -68,7 +69,7 @@ from django import forms
 
 class SampleForm(forms.Form):
   foo = forms.IntegerField(initial=10)
-  
+
 ```
 
 他にも, コンストラクタの中で `self['foo'].initial = 10` などとするやり方もありますが, 若干正攻法ではない気がします[^3].
