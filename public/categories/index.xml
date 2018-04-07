@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on i was perfect</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on i was perfect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data Analysis</title>
+      <link>/categories/data-analysis/</link>
+      <pubDate>Sat, 09 Dec 2017 00:00:00 +0900</pubDate>
+      
+      <guid>/categories/data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Preprocessing</title>
+      <link>/categories/data-preprocessing/</link>
+      <pubDate>Sat, 09 Dec 2017 00:00:00 +0900</pubDate>
+      
+      <guid>/categories/data-preprocessing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>/categories/django/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
+      
+      <guid>/categories/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/categories/python/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
+      
+      <guid>/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web App</title>
+      <link>/categories/web-app/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
+      
+      <guid>/categories/web-app/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

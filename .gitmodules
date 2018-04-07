@@ -1,7 +1,3 @@
 [submodule "themes/hugo-future-imperfect"]
 	path = themes/hugo-future-imperfect
 	url = https://github.com/jpescador/hugo-future-imperfect/
-
-[submodule "public"]
-	path = public
-	url = https://github.com/515hikaru/515hikaru.github.io
