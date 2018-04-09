@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Preprocessing on i was perfect</title>
-    <link>/categories/data-preprocessing/</link>
+    <link>/tech-memo/categories/data-preprocessing/</link>
     <description>Recent content in Data Preprocessing on i was perfect</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 09 Dec 2017 00:00:00 +0900</lastBuildDate>
     
-	<atom:link href="/categories/data-preprocessing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tech-memo/categories/data-preprocessing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>なぜデータの前処理は難しいのか</title>
-      <link>/post/2017/12/09/why-data-preprocessing-is-difficult/</link>
+      <link>/tech-memo/post/2017/12/09/why-data-preprocessing-is-difficult/</link>
       <pubDate>Sat, 09 Dec 2017 00:00:00 +0900</pubDate>
       
-      <guid>/post/2017/12/09/why-data-preprocessing-is-difficult/</guid>
+      <guid>/tech-memo/post/2017/12/09/why-data-preprocessing-is-difficult/</guid>
       <description>データ分析の業務工程のうち、半分以上は前処理で占められているという話がある。おそらく業界の人間であれば必ず一度は聞き、実際に実感する話であり、それ以外の人でも興味がある人であればこの話を聞いたことがあるだろう。
 しかし実際のところなぜデータの前処理でそこまで時間を食うのか、あるいは何がそんなに難しいのかを解説されたことがほとんどない気がする1。ということで、1年ほど仕事をしてきた私見を書いてみようと思う。あくまでも個人の経験と偏見に基づいた話なのでこれが「普遍的な難しさである」と主張する気はない。しかし、なんとなく「似たようなこと」は日本中のそこかしこで起きているんじゃないかと根拠もなく思ってはいる。
 この記事は個人の見解であり、筆者が所属する組織・団体などの意見を代表するものではありません2。

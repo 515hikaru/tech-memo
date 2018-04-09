@@ -3,74 +3,74 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/2018/04/09/python-abc-module/</loc>
+    <loc>/tech-memo/post/2018/04/09/python-abc-module/</loc>
     <lastmod>2018-04-09T22:31:49+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2017/12/28/how-to-use-django-form-obj/</loc>
+    <loc>/tech-memo/post/2017/12/28/how-to-use-django-form-obj/</loc>
     <lastmod>2017-12-28T00:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2017/12/09/why-data-preprocessing-is-difficult/</loc>
+    <loc>/tech-memo/post/2017/12/09/why-data-preprocessing-is-difficult/</loc>
     <lastmod>2017-12-09T00:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/tech-memo/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/data-analysis/</loc>
-    <lastmod>2017-12-09T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/data-preprocessing/</loc>
+    <loc>/tech-memo/categories/data-analysis/</loc>
     <lastmod>2017-12-09T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/django/</loc>
+    <loc>/tech-memo/categories/data-preprocessing/</loc>
+    <lastmod>2017-12-09T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tech-memo/categories/django/</loc>
     <lastmod>2017-12-28T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/tech-memo/post/</loc>
     <lastmod>2018-04-09T22:31:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/programmingtips/</loc>
+    <loc>/tech-memo/categories/programmingtips/</loc>
     <lastmod>2018-04-09T22:31:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/python/</loc>
+    <loc>/tech-memo/categories/python/</loc>
     <lastmod>2018-04-09T22:31:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/tech-memo/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/web-app/</loc>
+    <loc>/tech-memo/categories/web-app/</loc>
     <lastmod>2017-12-28T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/tech-memo/</loc>
     <lastmod>2018-04-09T22:31:49+09:00</lastmod>
     <priority>0</priority>
   </url>
