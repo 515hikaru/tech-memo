@@ -1,6 +1,7 @@
 baseurl = "/"
 languageCode = "ja-jp"
 title = "i was perfect"
+publishdir = "docs"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
