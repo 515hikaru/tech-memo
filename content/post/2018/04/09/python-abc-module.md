@@ -2,7 +2,7 @@
 title: "Abstract Base Classes with Python"
 date: 2018-04-09T22:31:49+09:00
 draft: false
-categories: ["Python", "Programming Tips"]
+categories: ["Python", "ProgrammingTips"]
 ---
 
 最近は Java っぽい Python を書いている。いや、僕は Java を書いたことがないので本当に Java っぽいのかはよくわからないのだけれど。
