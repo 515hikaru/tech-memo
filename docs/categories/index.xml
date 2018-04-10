@@ -2,65 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on i was perfect</title>
-    <link>tech.515hikaru.net/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on i was perfect</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     
-	<atom:link href="tech.515hikaru.net/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data Analysis</title>
-      <link>tech.515hikaru.net/categories/data-analysis/</link>
+      <link>/categories/data-analysis/</link>
       <pubDate>Sat, 09 Dec 2017 00:00:00 +0900</pubDate>
       
-      <guid>tech.515hikaru.net/categories/data-analysis/</guid>
+      <guid>/categories/data-analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Preprocessing</title>
-      <link>tech.515hikaru.net/categories/data-preprocessing/</link>
+      <link>/categories/data-preprocessing/</link>
       <pubDate>Sat, 09 Dec 2017 00:00:00 +0900</pubDate>
       
-      <guid>tech.515hikaru.net/categories/data-preprocessing/</guid>
+      <guid>/categories/data-preprocessing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Django</title>
-      <link>tech.515hikaru.net/categories/django/</link>
+      <link>/categories/django/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
       
-      <guid>tech.515hikaru.net/categories/django/</guid>
+      <guid>/categories/django/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ProgrammingTips</title>
-      <link>tech.515hikaru.net/categories/programmingtips/</link>
+      <link>/categories/programmingtips/</link>
       <pubDate>Mon, 09 Apr 2018 22:31:49 +0900</pubDate>
       
-      <guid>tech.515hikaru.net/categories/programmingtips/</guid>
+      <guid>/categories/programmingtips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>tech.515hikaru.net/categories/python/</link>
+      <link>/categories/python/</link>
       <pubDate>Mon, 09 Apr 2018 22:31:49 +0900</pubDate>
       
-      <guid>tech.515hikaru.net/categories/python/</guid>
+      <guid>/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web App</title>
-      <link>tech.515hikaru.net/categories/web-app/</link>
+      <link>/categories/web-app/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
       
-      <guid>tech.515hikaru.net/categories/web-app/</guid>
+      <guid>/categories/web-app/</guid>
       <description></description>
     </item>
     
