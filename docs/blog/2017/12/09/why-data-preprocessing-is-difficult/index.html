@@ -1,0 +1,854 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/tech-memo/"
+        },
+        "articleSection" : "blog",
+        "name" : "なぜデータの前処理は難しいのか",
+        "headline" : "なぜデータの前処理は難しいのか",
+        "description" : "データ分析の業務工程のうち、半分以上は前処理で占められているという話がある。おそらく業界の人間であれば必ず一度は聞き、実際に実感する話であり、それ以外の人でも興味がある人であればこの話を聞いたことがあるだろう。
+しかし実際のところなぜデータの前処理でそこまで時間を食うのか、あるいは何がそんなに難しいのかを解説されたことがほとんどない気がする1。ということで、1年ほど仕事をしてきた私見を書いてみようと思う。あくまでも個人の経験と偏見に基づいた話なのでこれが「普遍的な難しさである」と主張する気はない。しかし、なんとなく「似たようなこと」は日本中のそこかしこで起きているんじゃないかと根拠もなく思ってはいる。
+この記事は個人の見解であり、筆者が所属する組織・団体などの意見を代表するものではありません2。
+前提 繰り返しになるが、データの前処理で筆者がよく難しいと思うことを思いつく順に書いていこうと思う。
+ただ、本論に入る前に少しだけ筆者のバックグラウンドを説明しておく。筆者は基本的にはエクセルシートやcsvファイルを受け取って、そのデータを用いて予測モデルを作ったり、先日も記事にした類似度計算をすることでリコメンドシステムを実装したりするのが仕事である。どの業務をする上でも、csvファイルから必要な列のみ取り出したり、データの形式を変えたりするなど前処理のプロセスは必ず生じる。また、画像の前処理の経験はなく、テキストデータの前処理しか経験がない。
+データの不備の検知しづらさ 少し想像してみてほしい。Excelファイルに10,000人分の身長が記録されていたとする。このとき、身長が [cm] という単位で記録されるべきところ、入力者が誤って [mm] で入力してしまっている。どうやって探すだろうか?
+予め「このデータには絶対に上記のような不備がある」とわかっているのであればそれを発見するのはそこまで難しい話ではない。大きい順、あるいは小さい順にソートして人間としては(cmでの数値だとしたとき)身長が高すぎる/低すぎるものを見つければいい。可視化して明らかなハズレ値を調べるというのも手だろう。
+しかし、残念ながら経験上いきなりデータの不備を疑うことは稀だ。時間に追われていることも多いし、いきなり前処理のプログラムを書いてしまうだろう。データベースに登録したり、あるいは別のcsvファイルと結合したりする。プログラムは異常な値を含んでいても「回ってしまうから」だ。
+時間が十分にあれば事前のチェックを時間をとってできるかもしれないが、時間がない場合は見逃されてしまうだろう。上の例では身長のみだったので外れ値を探すのは難しくなかったかもしれないが、身長、体重、年齢、血液型、住んでいる都道府県などなどデータが数十、数百あった場合。異常な値をいかにみつけるか?すべて手作業でやるしかないのなら、その処理がそのプロジェクトの成功にどれほど寄与するだろうか?
+データの変更によるプログラムの変更 データその1を前処理したスクリプトで、データその2を前処理することがよくある。最初から大量のデータを扱うことは稀で、基本的には少ないデータで始めて徐々に多くしていったり、精度向上のため変数の変更、追加、削除をすることがあるからだ。
+しかし、このときデータその1を処理したスクリプトを一切変更せずその2を前処理できることは極めて稀だと言っていいと思う。具体的に何が起きるかを例で示そう。
+具体例 かんたんのため小さいデータセットで書く。
+    foo bar     1 1 2   2 3 4   3 5 6    こんなデータがあるとして foo 列と bar 列を標準化したい3とする。さっと書くと次のようなコードになる(上のデータが data1.csv に書き出されているものとする)。
+import pandas as pd from sklearn.preprocessing import StandardScaler d = pd.read_csv('data1.csv') sc = StandardScaler() print(sc.fit_transform(d)) # 実行結果 # [[-1.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2017",
+        "datePublished": "2017-12-09 00:00:00 &#43;0900 JST",
+        "dateModified" : "2017-12-09 00:00:00 &#43;0900 JST",
+        "url" : "/tech-memo/blog/2017/12/09/why-data-preprocessing-is-difficult/",
+        "wordCount" : "262",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            <title>なぜデータの前処理は難しいのか - i was perfect</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.38.1" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="515Hikaru blog about technical">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="なぜデータの前処理は難しいのか"/>
+<meta name="twitter:description" content="データ分析の業務工程のうち、半分以上は前処理で占められているという話がある。おそらく業界の人間であれば必ず一度は聞き、実際に実感する話であり、それ以外の人でも興味がある人であればこの話を聞いたことがあるだろう。
+しかし実際のところなぜデータの前処理でそこまで時間を食うのか、あるいは何がそんなに難しいのかを解説されたことがほとんどない気がする1。ということで、1年ほど仕事をしてきた私見を書いてみようと思う。あくまでも個人の経験と偏見に基づいた話なのでこれが「普遍的な難しさである」と主張する気はない。しかし、なんとなく「似たようなこと」は日本中のそこかしこで起きているんじゃないかと根拠もなく思ってはいる。
+この記事は個人の見解であり、筆者が所属する組織・団体などの意見を代表するものではありません2。
+前提 繰り返しになるが、データの前処理で筆者がよく難しいと思うことを思いつく順に書いていこうと思う。
+ただ、本論に入る前に少しだけ筆者のバックグラウンドを説明しておく。筆者は基本的にはエクセルシートやcsvファイルを受け取って、そのデータを用いて予測モデルを作ったり、先日も記事にした類似度計算をすることでリコメンドシステムを実装したりするのが仕事である。どの業務をする上でも、csvファイルから必要な列のみ取り出したり、データの形式を変えたりするなど前処理のプロセスは必ず生じる。また、画像の前処理の経験はなく、テキストデータの前処理しか経験がない。
+データの不備の検知しづらさ 少し想像してみてほしい。Excelファイルに10,000人分の身長が記録されていたとする。このとき、身長が [cm] という単位で記録されるべきところ、入力者が誤って [mm] で入力してしまっている。どうやって探すだろうか?
+予め「このデータには絶対に上記のような不備がある」とわかっているのであればそれを発見するのはそこまで難しい話ではない。大きい順、あるいは小さい順にソートして人間としては(cmでの数値だとしたとき)身長が高すぎる/低すぎるものを見つければいい。可視化して明らかなハズレ値を調べるというのも手だろう。
+しかし、残念ながら経験上いきなりデータの不備を疑うことは稀だ。時間に追われていることも多いし、いきなり前処理のプログラムを書いてしまうだろう。データベースに登録したり、あるいは別のcsvファイルと結合したりする。プログラムは異常な値を含んでいても「回ってしまうから」だ。
+時間が十分にあれば事前のチェックを時間をとってできるかもしれないが、時間がない場合は見逃されてしまうだろう。上の例では身長のみだったので外れ値を探すのは難しくなかったかもしれないが、身長、体重、年齢、血液型、住んでいる都道府県などなどデータが数十、数百あった場合。異常な値をいかにみつけるか?すべて手作業でやるしかないのなら、その処理がそのプロジェクトの成功にどれほど寄与するだろうか?
+データの変更によるプログラムの変更 データその1を前処理したスクリプトで、データその2を前処理することがよくある。最初から大量のデータを扱うことは稀で、基本的には少ないデータで始めて徐々に多くしていったり、精度向上のため変数の変更、追加、削除をすることがあるからだ。
+しかし、このときデータその1を処理したスクリプトを一切変更せずその2を前処理できることは極めて稀だと言っていいと思う。具体的に何が起きるかを例で示そう。
+具体例 かんたんのため小さいデータセットで書く。
+    foo bar     1 1 2   2 3 4   3 5 6    こんなデータがあるとして foo 列と bar 列を標準化したい3とする。さっと書くと次のようなコードになる(上のデータが data1.csv に書き出されているものとする)。
+import pandas as pd from sklearn.preprocessing import StandardScaler d = pd.read_csv(&#39;data1.csv&#39;) sc = StandardScaler() print(sc.fit_transform(d)) # 実行結果 # [[-1."/>
+<meta name="twitter:site" content="@515hikaru"/>
+
+        <meta property="og:title" content="なぜデータの前処理は難しいのか" />
+<meta property="og:description" content="データ分析の業務工程のうち、半分以上は前処理で占められているという話がある。おそらく業界の人間であれば必ず一度は聞き、実際に実感する話であり、それ以外の人でも興味がある人であればこの話を聞いたことがあるだろう。
+しかし実際のところなぜデータの前処理でそこまで時間を食うのか、あるいは何がそんなに難しいのかを解説されたことがほとんどない気がする1。ということで、1年ほど仕事をしてきた私見を書いてみようと思う。あくまでも個人の経験と偏見に基づいた話なのでこれが「普遍的な難しさである」と主張する気はない。しかし、なんとなく「似たようなこと」は日本中のそこかしこで起きているんじゃないかと根拠もなく思ってはいる。
+この記事は個人の見解であり、筆者が所属する組織・団体などの意見を代表するものではありません2。
+前提 繰り返しになるが、データの前処理で筆者がよく難しいと思うことを思いつく順に書いていこうと思う。
+ただ、本論に入る前に少しだけ筆者のバックグラウンドを説明しておく。筆者は基本的にはエクセルシートやcsvファイルを受け取って、そのデータを用いて予測モデルを作ったり、先日も記事にした類似度計算をすることでリコメンドシステムを実装したりするのが仕事である。どの業務をする上でも、csvファイルから必要な列のみ取り出したり、データの形式を変えたりするなど前処理のプロセスは必ず生じる。また、画像の前処理の経験はなく、テキストデータの前処理しか経験がない。
+データの不備の検知しづらさ 少し想像してみてほしい。Excelファイルに10,000人分の身長が記録されていたとする。このとき、身長が [cm] という単位で記録されるべきところ、入力者が誤って [mm] で入力してしまっている。どうやって探すだろうか?
+予め「このデータには絶対に上記のような不備がある」とわかっているのであればそれを発見するのはそこまで難しい話ではない。大きい順、あるいは小さい順にソートして人間としては(cmでの数値だとしたとき)身長が高すぎる/低すぎるものを見つければいい。可視化して明らかなハズレ値を調べるというのも手だろう。
+しかし、残念ながら経験上いきなりデータの不備を疑うことは稀だ。時間に追われていることも多いし、いきなり前処理のプログラムを書いてしまうだろう。データベースに登録したり、あるいは別のcsvファイルと結合したりする。プログラムは異常な値を含んでいても「回ってしまうから」だ。
+時間が十分にあれば事前のチェックを時間をとってできるかもしれないが、時間がない場合は見逃されてしまうだろう。上の例では身長のみだったので外れ値を探すのは難しくなかったかもしれないが、身長、体重、年齢、血液型、住んでいる都道府県などなどデータが数十、数百あった場合。異常な値をいかにみつけるか?すべて手作業でやるしかないのなら、その処理がそのプロジェクトの成功にどれほど寄与するだろうか?
+データの変更によるプログラムの変更 データその1を前処理したスクリプトで、データその2を前処理することがよくある。最初から大量のデータを扱うことは稀で、基本的には少ないデータで始めて徐々に多くしていったり、精度向上のため変数の変更、追加、削除をすることがあるからだ。
+しかし、このときデータその1を処理したスクリプトを一切変更せずその2を前処理できることは極めて稀だと言っていいと思う。具体的に何が起きるかを例で示そう。
+具体例 かんたんのため小さいデータセットで書く。
+    foo bar     1 1 2   2 3 4   3 5 6    こんなデータがあるとして foo 列と bar 列を標準化したい3とする。さっと書くと次のようなコードになる(上のデータが data1.csv に書き出されているものとする)。
+import pandas as pd from sklearn.preprocessing import StandardScaler d = pd.read_csv(&#39;data1.csv&#39;) sc = StandardScaler() print(sc.fit_transform(d)) # 実行結果 # [[-1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/tech-memo/blog/2017/12/09/why-data-preprocessing-is-difficult/" />
+
+
+
+<meta property="article:published_time" content="2017-12-09T00:00:00&#43;09:00"/>
+
+<meta property="article:modified_time" content="2017-12-09T00:00:00&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="/tech-memo//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="なぜデータの前処理は難しいのか">
+<meta itemprop="description" content="データ分析の業務工程のうち、半分以上は前処理で占められているという話がある。おそらく業界の人間であれば必ず一度は聞き、実際に実感する話であり、それ以外の人でも興味がある人であればこの話を聞いたことがあるだろう。
+しかし実際のところなぜデータの前処理でそこまで時間を食うのか、あるいは何がそんなに難しいのかを解説されたことがほとんどない気がする1。ということで、1年ほど仕事をしてきた私見を書いてみようと思う。あくまでも個人の経験と偏見に基づいた話なのでこれが「普遍的な難しさである」と主張する気はない。しかし、なんとなく「似たようなこと」は日本中のそこかしこで起きているんじゃないかと根拠もなく思ってはいる。
+この記事は個人の見解であり、筆者が所属する組織・団体などの意見を代表するものではありません2。
+前提 繰り返しになるが、データの前処理で筆者がよく難しいと思うことを思いつく順に書いていこうと思う。
+ただ、本論に入る前に少しだけ筆者のバックグラウンドを説明しておく。筆者は基本的にはエクセルシートやcsvファイルを受け取って、そのデータを用いて予測モデルを作ったり、先日も記事にした類似度計算をすることでリコメンドシステムを実装したりするのが仕事である。どの業務をする上でも、csvファイルから必要な列のみ取り出したり、データの形式を変えたりするなど前処理のプロセスは必ず生じる。また、画像の前処理の経験はなく、テキストデータの前処理しか経験がない。
+データの不備の検知しづらさ 少し想像してみてほしい。Excelファイルに10,000人分の身長が記録されていたとする。このとき、身長が [cm] という単位で記録されるべきところ、入力者が誤って [mm] で入力してしまっている。どうやって探すだろうか?
+予め「このデータには絶対に上記のような不備がある」とわかっているのであればそれを発見するのはそこまで難しい話ではない。大きい順、あるいは小さい順にソートして人間としては(cmでの数値だとしたとき)身長が高すぎる/低すぎるものを見つければいい。可視化して明らかなハズレ値を調べるというのも手だろう。
+しかし、残念ながら経験上いきなりデータの不備を疑うことは稀だ。時間に追われていることも多いし、いきなり前処理のプログラムを書いてしまうだろう。データベースに登録したり、あるいは別のcsvファイルと結合したりする。プログラムは異常な値を含んでいても「回ってしまうから」だ。
+時間が十分にあれば事前のチェックを時間をとってできるかもしれないが、時間がない場合は見逃されてしまうだろう。上の例では身長のみだったので外れ値を探すのは難しくなかったかもしれないが、身長、体重、年齢、血液型、住んでいる都道府県などなどデータが数十、数百あった場合。異常な値をいかにみつけるか?すべて手作業でやるしかないのなら、その処理がそのプロジェクトの成功にどれほど寄与するだろうか?
+データの変更によるプログラムの変更 データその1を前処理したスクリプトで、データその2を前処理することがよくある。最初から大量のデータを扱うことは稀で、基本的には少ないデータで始めて徐々に多くしていったり、精度向上のため変数の変更、追加、削除をすることがあるからだ。
+しかし、このときデータその1を処理したスクリプトを一切変更せずその2を前処理できることは極めて稀だと言っていいと思う。具体的に何が起きるかを例で示そう。
+具体例 かんたんのため小さいデータセットで書く。
+    foo bar     1 1 2   2 3 4   3 5 6    こんなデータがあるとして foo 列と bar 列を標準化したい3とする。さっと書くと次のようなコードになる(上のデータが data1.csv に書き出されているものとする)。
+import pandas as pd from sklearn.preprocessing import StandardScaler d = pd.read_csv(&#39;data1.csv&#39;) sc = StandardScaler() print(sc.fit_transform(d)) # 実行結果 # [[-1.">
+
+
+<meta itemprop="datePublished" content="2017-12-09T00:00:00&#43;09:00" />
+<meta itemprop="dateModified" content="2017-12-09T00:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="262">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/tech-memo/css/main.css">
+            <link rel="stylesheet" href="/tech-memo/css/add-on.css">
+            <link rel="stylesheet" href="/tech-memo/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      <h1><a href="/tech-memo/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/tech-memo/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://blog.515hikaru.net/about">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://blog.515hikaru.net">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Personal
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tech-memo/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/tech-memo/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/tech-memo/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/tech-memo/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.515hikaru.net/about">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.515hikaru.net">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Personal
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tech-memo/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="/tech-memo/blog/2017/12/09/why-data-preprocessing-is-difficult/">なぜデータの前処理は難しいのか</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                
+
+<p>データ分析の業務工程のうち、半分以上は前処理で占められているという話がある。おそらく業界の人間であれば必ず一度は聞き、実際に実感する話であり、それ以外の人でも興味がある人であればこの話を聞いたことがあるだろう。</p>
+
+<p>しかし実際のところなぜデータの前処理でそこまで時間を食うのか、あるいは何がそんなに難しいのかを解説されたことがほとんどない気がする<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>。ということで、1年ほど仕事をしてきた私見を書いてみようと思う。あくまでも個人の経験と偏見に基づいた話なのでこれが「普遍的な難しさである」と主張する気はない。しかし、なんとなく「似たようなこと」は日本中のそこかしこで起きているんじゃないかと根拠もなく思ってはいる。</p>
+
+<p>この記事は個人の見解であり、筆者が所属する組織・団体などの意見を代表するものではありません<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>。</p>
+
+<!-- more -->
+
+<h1 id="前提">前提</h1>
+
+<p>繰り返しになるが、データの前処理で筆者がよく難しいと思うことを思いつく順に書いていこうと思う。</p>
+
+<p>ただ、本論に入る前に少しだけ筆者のバックグラウンドを説明しておく。筆者は基本的にはエクセルシートやcsvファイルを受け取って、そのデータを用いて予測モデルを作ったり、<a href="http://hikaru515.hatenadiary.com/entry/2017/12/06/000200">先日も記事にした類似度計算をすることで</a>リコメンドシステムを実装したりするのが仕事である。どの業務をする上でも、csvファイルから必要な列のみ取り出したり、データの形式を変えたりするなど前処理のプロセスは必ず生じる。また、画像の前処理の経験はなく、テキストデータの前処理しか経験がない。</p>
+
+<h1 id="データの不備の検知しづらさ">データの不備の検知しづらさ</h1>
+
+<p>少し想像してみてほしい。Excelファイルに10,000人分の身長が記録されていたとする。このとき、身長が [cm] という単位で記録されるべきところ、入力者が誤って [mm] で入力してしまっている。どうやって探すだろうか?</p>
+
+<p>予め「このデータには絶対に上記のような不備がある」とわかっているのであればそれを発見するのはそこまで難しい話ではない。大きい順、あるいは小さい順にソートして人間としては(cmでの数値だとしたとき)身長が高すぎる/低すぎるものを見つければいい。可視化して明らかなハズレ値を調べるというのも手だろう。</p>
+
+<p>しかし、残念ながら経験上いきなりデータの不備を疑うことは稀だ。時間に追われていることも多いし、いきなり前処理のプログラムを書いてしまうだろう。データベースに登録したり、あるいは別のcsvファイルと結合したりする。プログラムは異常な値を含んでいても「回ってしまうから」だ。</p>
+
+<p>時間が十分にあれば事前のチェックを時間をとってできるかもしれないが、時間がない場合は見逃されてしまうだろう。上の例では身長のみだったので外れ値を探すのは難しくなかったかもしれないが、身長、体重、年齢、血液型、住んでいる都道府県などなどデータが数十、数百あった場合。異常な値をいかにみつけるか?すべて手作業でやるしかないのなら、その処理がそのプロジェクトの成功にどれほど寄与するだろうか?</p>
+
+<h1 id="データの変更によるプログラムの変更">データの変更によるプログラムの変更</h1>
+
+<p>データその1を前処理したスクリプトで、データその2を前処理することがよくある。最初から大量のデータを扱うことは稀で、基本的には少ないデータで始めて徐々に多くしていったり、精度向上のため変数の変更、追加、削除をすることがあるからだ。</p>
+
+<p>しかし、このときデータその1を処理したスクリプトを一切変更せずその2を前処理できることは極めて稀だと言っていいと思う。具体的に何が起きるかを例で示そう。</p>
+
+<h2 id="具体例">具体例</h2>
+
+<p>かんたんのため小さいデータセットで書く。</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>foo</th>
+<th>bar</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+
+<p>こんなデータがあるとして <code>foo</code> 列と <code>bar</code> 列を標準化したい<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>とする。さっと書くと次のようなコードになる(上のデータが <code>data1.csv</code> に書き出されているものとする)。</p>
+
+<pre><code class="language-python">import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+d = pd.read_csv('data1.csv')
+sc = StandardScaler()
+
+print(sc.fit_transform(d))
+
+# 実行結果
+# [[-1.34164079 -1.34164079]
+# [-0.4472136  -0.4472136 ]
+# [ 0.4472136   0.4472136 ]
+# [ 1.34164079  1.34164079]]
+</code></pre>
+
+<p>なお、本来ならcsvなどに書き出すのが前処理だが、ここではその処理を書くのは冗長なので省いた。</p>
+
+<p>これで前処理のコードができたわけだが、この分析には <code>boo</code> 列が必要だとわかり <code>boo</code> 列が追加された <code>data2.csv</code> が送られてきたとしよう。</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>foo</th>
+<th>bar</th>
+<th>boo</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>5</td>
+<td>6</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>7</td>
+<td>8</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>これをさっきのスクリプトに投げてみる。</p>
+
+<pre><code class="language-python">import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+d = pd.read_csv('data2.csv')
+sc = StandardScaler()
+
+print(sc.fit_transform(d))
+
+# 実行結果: エラー
+# ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
+</code></pre>
+
+<p>この通りエラーになってしまう。理由は <code>NaN</code> が混じっているからだ。</p>
+
+<p>今はたった4行なので <code>NaN</code> が混じっていることにはすぐ気づけるが、これが 10,000 行あるうちの 6,000 行目くらいに <code>NaN</code> があるとたいてい気づかない。<code>NaN</code> を含んでいるかどうかあらかじめチェックしておけという意見もあろうが、いつもいつも万全の状態で前処理ができるとは限らないのだ。</p>
+
+<p>そして <code>NaN</code> があることに気づいたとしても問題はここで終わりではない。 <code>NaN</code> をどう処理するか? という問題も生じる。今回の場合、 <code>boo</code> は フラグデータっぽいので <code>NaN</code> は 0 で埋めればよさそうに思える。一方 <code>NaN</code> は消してほしいときもあれば、平均値で補間して欲しいときもある。<code>NaN</code> をどう処理するかはその時と場合による。そして上に挙げた3つをすべて試して精度がどう変わるのか調べてほしいと言われることもある。もうこの時点で前処理の方法を3種類表現しなければならない。</p>
+
+<p>以上のように、入力データの変更により前処理スクリプトが動作しなくなることは日常茶飯事である。入力データのみならず、出力データをどうしたいかにより、コマンドライン引数を作って場合分けをしたりするなどの処理が生じる。</p>
+
+<p>「データに合わせてコードを変える」し、「データの構造は安定しない」状態でコードを書き続ける必要がある。</p>
+
+<h1 id="アドホックな処理に陥りがち">アドホックな処理に陥りがち</h1>
+
+<p>上の例では、 <code>NaN</code> が混じっていたが、他にも数値が入っているべき列に <code>A</code> などの文字が入っていることがある。この場合例えば <code>A</code> を含む行は削除する処理を書くのだが、データの中を見ていない人にとってはこの処理はよくわからない処理になってしまう。</p>
+
+<p>「不適切な値の除去」という一般的な処理ではあるのだが、コード上ではアドホック(場当たり的)な処理として記述されることになる。もし不適切な値が5種類くらいあったら、5回アドホックな処理を書くことになる。そしてそれも「削除」と「平均で埋める」の両方試してほしいとなると…‥また考える処理が増えることとなる。</p>
+
+<h1 id="正しさ-がわからない">「正しさ」がわからない</h1>
+
+<p>最終的には CSV ファイルや JSON ファイルに書き出したり、Python の Pickle ファイルや Nnumpy の配列(<code>.npy</code>)とかに書き出してファイル化することが前処理の最終目標である。が、エラーなくファイル書き出しが終われば前処理終了ではない。何をもって前処理が「正しく」終えられていると判断するか。これは簡単な話ではない。</p>
+
+<p>たとえば、上の標準化済みのデータの場合、標準化後のデータを見るとその数値から何かを(人間が)読み取ることは難しい。標準化前ののデータであれば身長の列と体重の列はおそらく数字だけで区別できるだろうが、標準化後はわからなくなってしまう。</p>
+
+<p>他にも、レコードの <code>id</code> と対応が壊れていないか、重複している行はないか、入れ漏らしているデータはないか。前処理が正しくできたか、それはプログラムを書いた本人でさえわからないのだ。</p>
+
+<p>他にも、「どう前処理をするべきか」は常に変わるということが挙げられる。以下でも少しテストの話をするが、テストは「入力と出力が決まっている」関数について書くと強い効果を発揮してくれる。しかしデータ分析案件においては、入力と出力が昨日と今日どころか、一時間前と今で変わっていたりする。「一時間前の自分」が想定した出力形式になっているコードが、「今の自分」にとってはバグになっていることがある。</p>
+
+<h1 id="テストが書きにくい">テストが書きにくい</h1>
+
+<p>では正しさを規定すればいいということで「テストを書け」という意見が出るだろう。僕もテストを書こうと思っている。しかし、さてどうやって書けばいいのかと途方に暮れる。</p>
+
+<p>わかりやすいこととしては、そもそも行数と列数が想定と違っていてはだめだと <code>assert</code> する、というのはひとつの手だ。</p>
+
+<pre><code class="language-python"># ※このコードは動きません。こんな雰囲気ってことです
+import numpy as np
+from sklearn.some_module import SomeModel
+
+# ... X, y データ作成処理...
+
+X = train_data
+y = label_data
+
+assert X.shape[1] == 10 # 変数の数が正しいかどうか確認
+assert x.shape[0] == y.shape[0] # データの数が正しいかどうか確認
+
+model = SomeModel()
+model.fit(X, y)
+print(model.predict(X), y)
+</code></pre>
+
+<p>こんなふうに、変数が 10 個のときに学習をさせることを想定すれば <code>X</code> の列数が 10 であることを確認し、あと学習データの数と教師ラベルの数が一致しているかを事前に確認しておく。</p>
+
+<p>非常に簡易ではあるが、ないよりはマシだろう。これ以上テストに力を入れるのは実は難しい。頻繁に変数の数を変える業務もあるからだ。変数の数が10個のケースと20個のケースと30個のケースで予測結果の違いを見る業務だってある。</p>
+
+<p>ユニットテストとか書こうと努力したこともあるが、データの形式の変更が上記のように頻繁すぎてテストケースそのものが役に立たなくなるケースが発生し、それ以来ある程度固まるまでテストは書かないようにしている。時間の無駄になる可能性が高いためだ。</p>
+
+<p>一方で、間違えやすい上に間違えると致命的なので、入力するデータの形式は正しいのかをテストすることは重要だと思っている。頻繁に形式を変更する場合、Jupyter Notebook とかを使用して処理している場合は <code>assert</code> を書き、 Webシステムに関わる場合はそのフレームワークのテスト機能を使用して書いている。</p>
+
+<p>だが開発中のシステムとかだと、かなり頻繁にテストを書き直す羽目になりこともある。これは僕が悪いのかもしれない。</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>まとめると、以下の2つが僕の思うデータの前処理が難しい理由だ。</p>
+
+<ol>
+<li>データの入力・出力形式が頻繁に変わるため「正しさ」を規定することが難しい
+
+<ul>
+<li>その結果としてテストを書いて正しい挙動をしていることを示し続けることが難しい</li>
+</ul></li>
+<li>データの増減などに対応した汎用的なコードを書くことは難しく、そのデータに依存したアドホックな処理を記述状態に陥りがち</li>
+</ol>
+
+<p>この問題意識を持ち始めたのは実は働き始めてから1, 2ヶ月ほどしたときからである。なんとか改善案はないかと個人的に色々な方法を業務中に試した。しかし未だに抜本的な対策はない。</p>
+
+<p>もちろん「ひとつのスクリプトとオリジナルのデータがあれば前処理が完遂する」とか、どうしてもスクリプトを分けたい場合は <code>Makefile</code> などを使うことで依存関係を人間が管理しない、などの前処理以前のプログラムを書く者として当たり前のことは言える。が、「前処理の一般論」として何か大きな、革新的なアイディアは何も思いついていない。この1年間、頭の片隅で考え続けてきたはずだが。</p>
+
+<p>僕の勝手な感覚だがデータの前処理が難しいことは、しばらくは変わらないのではないかと思う。早くディープラーニングとかいうやつで前処理をよしなにやってほしい。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">個人の感想です。おそらく少しググるだけで多少は情報が手に入ると思います。
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">一度書いてみたかった。
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">標準化というのはデータの平均を引いて標準偏差でわる処理のこと。単位の異なるデータでも数値のスケールを合わせるため、平均を0、標準偏差を1に調整する。
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/tech-memo/' class="logo"><img src="/tech-memo/img/main/logo.jpg" alt="Hugo Future Imperfect" /></a>
+      
+    
+    
+      <header>
+        <h2>I WAS PERFECT</h2>
+        <p></p>
+      </header>
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/tech-memo/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/tech-memo/categories/python/">Python</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/tech-memo/categories/data-analysis/">Data Analysis</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/tech-memo/categories/data-preprocessing/">Data Preprocessing</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/tech-memo/categories/django/">Django</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/tech-memo/categories/programmingtips/">ProgrammingTips</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/tech-memo/categories/web-app/">Web App</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/tech-memo/tech-memo/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/515hikaru" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+  <li><a href="//gitlab.com/515hikaru" target="_blank" title="GitLab" class="fa fa-gitlab"></a></li>
+
+
+
+
+
+  <li><a href="//bitbucket.com/tkojima28" target="_blank" title="Bitbucket" class="fa fa-bitbucket"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//medium.com/@515hikaru" target="_blank" title="Medium" class="fa fa-medium"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/515hikaru" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:12kojima.takahiro@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          i was perfect
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/tech-memo/js/util.js"></script>
+      <script src="/tech-memo/js/main.js"></script>
+      <script src="/tech-memo/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+
