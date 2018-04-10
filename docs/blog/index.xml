@@ -1,15 +1,51 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Preprocessing on i was perfect</title>
-    <link>/tech-memo/categories/data-preprocessing/</link>
-    <description>Recent content in Data Preprocessing on i was perfect</description>
+    <title>Blogs on i was perfect</title>
+    <link>/tech-memo/blog/</link>
+    <description>Recent content in Blogs on i was perfect</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 09 Dec 2017 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Apr 2018 22:31:49 +0900</lastBuildDate>
     
-	<atom:link href="/tech-memo/categories/data-preprocessing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tech-memo/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Abstract Base Classes with Python</title>
+      <link>/tech-memo/blog/2018/04/09/python-abc-module/</link>
+      <pubDate>Mon, 09 Apr 2018 22:31:49 +0900</pubDate>
+      
+      <guid>/tech-memo/blog/2018/04/09/python-abc-module/</guid>
+      <description>最近は Java っぽい Python を書いている。いや、僕は Java を書いたことがないので本当に Java っぽいのかはよくわからないのだけれど。
+そんなわけで、 class の使い方について最近学びが多い。 Effective Python で読んだメタクラスとかが早くも役に立っている。ということで今日は抽象クラスの使い方なんかをまとめておく。
+abc モジュール abc って言われた時、「アルファベットの最初の3文字がどうかした?」と思ったけれど、これは &amp;ldquo;Abstract Base Classes&amp;rdquo; の略。日本語にすると抽象基底クラス。
+いつも使えるわけではないが、
+ 類似の処理をするクラス群がある クラスごとに固有のメソッドと共通のメソッドがある  という状況下において威力を発揮する。具体的には、
+ 共通のメソッド及びパブリックメソッドは統一して抽象基底クラスで定義  各種クラスは抽象基底クラスを継承して固有のメソッドのみを実装する   とすることでクラスが増えても固有のメソッドにのみ注力すればよい。
+以下に具体例を用いてどんな利点があるのかを書くが、正確なことは公式ドキュメントを見るべきだ。この記事書く必要なくない?
+具体例 動物を鳴かせる たとえばよくある例で Dog というクラスに鳴く(bark)というメソッドを定義することを考える1。
+class Dog(object): def bark(self): print(&#39;わんわん&#39;)  こんなふうに定義して使っていたところ、動物は犬だけじゃなく猫も必要だということがわかった。ということで猫も定義しよう。
+class Cat(object): def meow(self): print(&#39;にゃー&#39;)  この実装の問題 とここで次のようなユースケースで早速困る。
+def make_sound(animal): animal.bark() # animal が Dog だったらOK, Cat だったらエラー  ということで、動物の鳴き声メソッドは統一するべきだとわかる。ここでは sound としよう。</description>
+    </item>
+    
+    <item>
+      <title>DjangoのFormオブジェクトの使い方Tips</title>
+      <link>/tech-memo/blog/2017/12/28/how-to-use-django-form-obj/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
+      
+      <guid>/tech-memo/blog/2017/12/28/how-to-use-django-form-obj/</guid>
+      <description>Django とは Django とは, Python の Web フレームワークです. Ruby でいうところの Rails 1に相当するフレームワークで, Git ホスティングサービスのBitbucket や最近「インスタ映え」で話題の Instagram にも利用されています2.
+この記事を書いている人も Django を使って Web アプリを作ったり作らなかったりしています.
+Form オブジェクト Django には当然いくつもの機能があるのですが, 筆者が一番ググるのが表題の Form オブジェクトについてです.
+Form オブジェクトは, 処理をするのに必要十分なデータが含まれているか, 不適切なデータが入っていないかをチェック(Validation)したり, HTML を自動生成したり, データベースの定義から Form を生成したりといろんなことができます.
+いろんなことができるので, こういうことできないかな? と思った時に StackOverflow をたくさん漁るのは僕だけではないはず&amp;hellip;
+そんなわけで今まで StackOverflow で得てきた知見のいくつかを書いておくことにしました. 体系的な解説というよりは, Tips 寄せ集めとして, やりたいこととその方法を書いていく感じです.
+Form のフィールドを可変にしたい 複数入力可能なフィールドを作りたいことはよくあるでしょう. クラス変数を動的に増やせばいいのでコンストラクタで増やします.
+以下は value_i という名前のフィールドを可変にする方法です.
+from django import forms class SampleForm(forms.Form): def __init__(self, num, *args, **kwargs): super().__init__(*args, **kwargs) for i in range(num): self[&#39;value_{}&#39;.</description>
+    </item>
     
     <item>
       <title>なぜデータの前処理は難しいのか</title>
