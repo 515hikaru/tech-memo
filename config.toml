@@ -10,6 +10,7 @@ googleAnalytics = ""
 enableRobotsTXT = true
 canonifyURLs = true
 
+
 [params]
   # Sets the meta tag description
   description          = "515Hikaru blog about technical"
