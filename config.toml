@@ -13,7 +13,7 @@ canonifyURLs = true
 
 [params]
   # Sets the meta tag description
-  description          = "515Hikaru blog about technical"
+  description          = "@515hikaruの技術ブログ"
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = ""
   # Sets where "View More Posts" links
