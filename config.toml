@@ -111,11 +111,6 @@ canonifyURLs = true
   identifier = "fa fa-sitemap"
   weight = 3
 
-[[menu.main]]
-  name = "Links"
-  url = "/links"
-  identifier = "fa fa-newspaper-o"
-  weight = 4
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
 # and socialAppearAtBottom.
