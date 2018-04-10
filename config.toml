@@ -113,7 +113,7 @@ canonifyURLs = true
 
 [[menu.main]]
   name = "Links"
-  url = "links"
+  url = "/links"
   identifier = "fa fa-newspaper-o"
   weight = 4
 # Sets Social Media icons to appear and link to your account. Value should be your
