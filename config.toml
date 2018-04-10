@@ -112,8 +112,8 @@ canonifyURLs = true
   weight = 3
 
 [[menu.main]]
-  name = "Personal Blog"
-  url = "http://blog.515hikaru.net"
+  name = "Links"
+  url = "links"
   identifier = "fa fa-newspaper-o"
   weight = 4
 # Sets Social Media icons to appear and link to your account. Value should be your
