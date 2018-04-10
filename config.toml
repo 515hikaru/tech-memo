@@ -101,22 +101,21 @@ canonifyURLs = true
 
 [[menu.main]]
   name = "About"
-  url = "http://blog.515hikaru.net/about"
+  url = "/about/"
   identifier = "fa fa-id-card-o"
   weight = 2
-
-[[menu.main]]
-  name = "Personal"
-  url = "http://blog.515hikaru.net"
-  identifier = "fa fa-newspaper-o"
-  weight = 3
 
 [[menu.main]]
   name = "Categories"
   url = "/categories/"
   identifier = "fa fa-sitemap"
-  weight = 4
+  weight = 3
 
+[[menu.main]]
+  name = "Personal Blog"
+  url = "http://blog.515hikaru.net"
+  identifier = "fa fa-newspaper-o"
+  weight = 4
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
 # and socialAppearAtBottom.

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/about/</loc>
+    <lastmod>2018-04-11T00:09:36+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2018/04/09/python-abc-module/</loc>
     <lastmod>2018-04-09T22:31:49+09:00</lastmod>
   </url>
