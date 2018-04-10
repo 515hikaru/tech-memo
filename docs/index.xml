@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>i was perfect</title>
-    <link>/tech-memo/</link>
+    <link>/</link>
     <description>Recent content on i was perfect</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 09 Apr 2018 22:31:49 +0900</lastBuildDate>
     
-	<atom:link href="/tech-memo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Abstract Base Classes with Python</title>
-      <link>/tech-memo/post/2018/04/09/python-abc-module/</link>
+      <link>/post/2018/04/09/python-abc-module/</link>
       <pubDate>Mon, 09 Apr 2018 22:31:49 +0900</pubDate>
       
-      <guid>/tech-memo/post/2018/04/09/python-abc-module/</guid>
+      <guid>/post/2018/04/09/python-abc-module/</guid>
       <description>最近は Java っぽい Python を書いている。いや、僕は Java を書いたことがないので本当に Java っぽいのかはよくわからないのだけれど。
 そんなわけで、 class の使い方について最近学びが多い。 Effective Python で読んだメタクラスとかが早くも役に立っている。ということで今日は抽象クラスの使い方なんかをまとめておく。
 abc モジュール abc って言われた時、「アルファベットの最初の3文字がどうかした?」と思ったけれど、これは &amp;ldquo;Abstract Base Classes&amp;rdquo; の略。日本語にすると抽象基底クラス。
@@ -32,10 +32,10 @@ def make_sound(animal): animal.bark() # animal が Dog だったらOK, Cat だ�
     
     <item>
       <title>DjangoのFormオブジェクトの使い方Tips</title>
-      <link>/tech-memo/post/2017/12/28/how-to-use-django-form-obj/</link>
+      <link>/post/2017/12/28/how-to-use-django-form-obj/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
       
-      <guid>/tech-memo/post/2017/12/28/how-to-use-django-form-obj/</guid>
+      <guid>/post/2017/12/28/how-to-use-django-form-obj/</guid>
       <description>Django とは Django とは, Python の Web フレームワークです. Ruby でいうところの Rails 1に相当するフレームワークで, Git ホスティングサービスのBitbucket や最近「インスタ映え」で話題の Instagram にも利用されています2.
 この記事を書いている人も Django を使って Web アプリを作ったり作らなかったりしています.
 Form オブジェクト Django には当然いくつもの機能があるのですが, 筆者が一番ググるのが表題の Form オブジェクトについてです.
@@ -49,10 +49,10 @@ from django import forms class SampleForm(forms.Form): def __init__(self, num, *
     
     <item>
       <title>なぜデータの前処理は難しいのか</title>
-      <link>/tech-memo/post/2017/12/09/why-data-preprocessing-is-difficult/</link>
+      <link>/post/2017/12/09/why-data-preprocessing-is-difficult/</link>
       <pubDate>Sat, 09 Dec 2017 00:00:00 +0900</pubDate>
       
-      <guid>/tech-memo/post/2017/12/09/why-data-preprocessing-is-difficult/</guid>
+      <guid>/post/2017/12/09/why-data-preprocessing-is-difficult/</guid>
       <description>データ分析の業務工程のうち、半分以上は前処理で占められているという話がある。おそらく業界の人間であれば必ず一度は聞き、実際に実感する話であり、それ以外の人でも興味がある人であればこの話を聞いたことがあるだろう。
 しかし実際のところなぜデータの前処理でそこまで時間を食うのか、あるいは何がそんなに難しいのかを解説されたことがほとんどない気がする1。ということで、1年ほど仕事をしてきた私見を書いてみようと思う。あくまでも個人の経験と偏見に基づいた話なのでこれが「普遍的な難しさである」と主張する気はない。しかし、なんとなく「似たようなこと」は日本中のそこかしこで起きているんじゃないかと根拠もなく思ってはいる。
 この記事は個人の見解であり、筆者が所属する組織・団体などの意見を代表するものではありません2。

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web App on i was perfect</title>
-    <link>/tech-memo/categories/web-app/</link>
+    <link>/categories/web-app/</link>
     <description>Recent content in Web App on i was perfect</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 28 Dec 2017 00:00:00 +0900</lastBuildDate>
     
-	<atom:link href="/tech-memo/categories/web-app/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/web-app/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DjangoのFormオブジェクトの使い方Tips</title>
-      <link>/tech-memo/post/2017/12/28/how-to-use-django-form-obj/</link>
+      <link>/post/2017/12/28/how-to-use-django-form-obj/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
       
-      <guid>/tech-memo/post/2017/12/28/how-to-use-django-form-obj/</guid>
+      <guid>/post/2017/12/28/how-to-use-django-form-obj/</guid>
       <description>Django とは Django とは, Python の Web フレームワークです. Ruby でいうところの Rails 1に相当するフレームワークで, Git ホスティングサービスのBitbucket や最近「インスタ映え」で話題の Instagram にも利用されています2.
 この記事を書いている人も Django を使って Web アプリを作ったり作らなかったりしています.
 Form オブジェクト Django には当然いくつもの機能があるのですが, 筆者が一番ググるのが表題の Form オブジェクトについてです.

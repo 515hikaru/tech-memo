@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ProgrammingTips on i was perfect</title>
-    <link>/tech-memo/categories/programmingtips/</link>
+    <link>/categories/programmingtips/</link>
     <description>Recent content in ProgrammingTips on i was perfect</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 09 Apr 2018 22:31:49 +0900</lastBuildDate>
     
-	<atom:link href="/tech-memo/categories/programmingtips/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/programmingtips/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Abstract Base Classes with Python</title>
-      <link>/tech-memo/post/2018/04/09/python-abc-module/</link>
+      <link>/post/2018/04/09/python-abc-module/</link>
       <pubDate>Mon, 09 Apr 2018 22:31:49 +0900</pubDate>
       
-      <guid>/tech-memo/post/2018/04/09/python-abc-module/</guid>
+      <guid>/post/2018/04/09/python-abc-module/</guid>
       <description>最近は Java っぽい Python を書いている。いや、僕は Java を書いたことがないので本当に Java っぽいのかはよくわからないのだけれど。
 そんなわけで、 class の使い方について最近学びが多い。 Effective Python で読んだメタクラスとかが早くも役に立っている。ということで今日は抽象クラスの使い方なんかをまとめておく。
 abc モジュール abc って言われた時、「アルファベットの最初の3文字がどうかした?」と思ったけれど、これは &amp;ldquo;Abstract Base Classes&amp;rdquo; の略。日本語にすると抽象基底クラス。
