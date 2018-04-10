@@ -236,6 +236,54 @@
                 
 
                 
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tech-memo/post/2018/04/09/python-abc-module/">Abstract Base Classes with Python</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-04-09'>
+                                    April 9, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tech-memo/post/2017/12/28/how-to-use-django-form-obj/">DjangoのFormオブジェクトの使い方Tips</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-12-28'>
+                                    December 28, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tech-memo/post/2017/12/09/why-data-preprocessing-is-difficult/">なぜデータの前処理は難しいのか</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-12-09'>
+                                    December 9, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tech-memo/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-04-09'>
+                                    April 9, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
 
                 
             </div>
@@ -247,6 +295,445 @@
 
     
     <div id="main">
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/tech-memo/post/2018/04/09/python-abc-module/">Abstract Base Classes with Python</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-04-09'>
+            April 9, 2018</time>
+        <span class="author"></span>
+        
+            <p>2 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;text=Abstract%20Base%20Classes%20with%20Python&amp;via=515hikaru" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;title=Abstract%20Base%20Classes%20with%20Python" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;title=Abstract%20Base%20Classes%20with%20Python" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;title=Abstract%20Base%20Classes%20with%20Python" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;description=Abstract%20Base%20Classes%20with%20Python" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<p>最近は Java っぽい Python を書いている。いや、僕は Java を書いたことがないので本当に Java っぽいのかはよくわからないのだけれど。</p>
+
+<p>そんなわけで、 <code>class</code> の使い方について最近学びが多い。 Effective Python で読んだメタクラスとかが早くも役に立っている。ということで今日は抽象クラスの使い方なんかをまとめておく。</p>
+
+<h1 id="abc-モジュール">abc モジュール</h1>
+
+<p>abc って言われた時、「アルファベットの最初の3文字がどうかした?」と思ったけれど、これは &ldquo;Abstract Base Classes&rdquo; の略。日本語にすると抽象基底クラス。</p>
+
+<p>いつも使えるわけではないが、</p>
+
+<ul>
+<li>類似の処理をするクラス群がある</li>
+<li>クラスごとに固有のメソッドと共通のメソッドがある</li>
+</ul>
+
+<p>という状況下において威力を発揮する。具体的には、</p>
+
+<ul>
+<li>共通のメソッド及びパブリックメソッドは統一して抽象基底クラスで定義
+
+<ul>
+<li>各種クラスは抽象基底クラスを継承して固有のメソッドのみを実装する</li>
+</ul></li>
+</ul>
+
+<p>とすることでクラスが増えても固有のメソッドにのみ注力すればよい。</p>
+
+<p>以下に具体例を用いてどんな利点があるのかを書くが、正確なことは<a href="https://docs.python.jp/3/library/abc.html">公式ドキュメントを見るべき</a>だ。この記事書く必要なくない?</p>
+
+<h1 id="具体例">具体例</h1>
+
+<h2 id="動物を鳴かせる">動物を鳴かせる</h2>
+
+<p>たとえばよくある例で <code>Dog</code> というクラスに鳴く(<code>bark</code>)というメソッドを定義することを考える<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>。</p>
+
+<pre><code class="language-python">class Dog(object):
+    def bark(self):
+        print('わんわん')
+</code></pre>
+
+<p>こんなふうに定義して使っていたところ、動物は犬だけじゃなく猫も必要だということがわかった。ということで猫も定義しよう。</p>
+
+<pre><code class="language-python">class Cat(object):
+    def meow(self):
+        print('にゃー')
+</code></pre>
+
+<h3 id="この実装の問題">この実装の問題</h3>
+
+<p>とここで次のようなユースケースで早速困る。</p>
+
+<pre><code class="language-python">def make_sound(animal):
+    animal.bark()  # animal が Dog だったらOK, Cat だったらエラー
+</code></pre>
+
+<p>ということで、動物の鳴き声メソッドは統一するべきだとわかる。ここでは <code>sound</code> としよう。</p>
+
+<h2 id="複数のクラスのメソッドを統一">複数のクラスのメソッドを統一</h2>
+
+<p>以下のように <code>Dog</code> と <code>Cat</code> を定義し直す。</p>
+
+<pre><code class="language-python">class Dog(object):
+    def sound(self):
+        print('わんわん')
+
+class Cat(object):
+    def sound(self):
+        print('にゃー')
+</code></pre>
+
+<p>この実装だと上の <code>make_sound</code> 関数は下記の実装にすれば問題なく動く。</p>
+
+<pre><code class="language-python">def make_sound(animal):
+    animal.sound()
+</code></pre>
+
+<h2 id="他の動作を追加">他の動作を追加</h2>
+
+<p>しかし、動物は鳴く以外の動作もする。例えば、「走る」を実装しよう。といっても、本当に走らせるのではなくここでは文字を <code>print</code> するだけにする。</p>
+
+<pre><code class="language-python">class Dog(object):
+    def sound(self):
+        print('わんわん')
+    def run(self):
+      print('スタタタタ')
+
+class Cat(object):
+    def sound(self):
+        print('にゃー')
+    def run(self):
+        print('スタタタタ')
+</code></pre>
+
+<p>おや? 犬も猫も走り方は一緒なのか音が同じだ<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>。メソッドが同じになってしまった。</p>
+
+<h2 id="動物の追加">動物の追加</h2>
+
+<p>さらにここに、猿を加えなくてはならなくなった。そして猿は &ldquo;ウキー&rdquo; と鳴いて、&rdquo;スタタタタ&rdquo; と走る(としよう)。つまり <code>run</code> メソッドは3つのクラスにおいて共通のメソッドで、 <code>sound</code> は名前は同じだが実装は異なるメソッドになる。</p>
+
+<p>こういう状況において、 <code>abc</code> モジュールを使ってみよう(やっと本題か。。。)</p>
+
+<h2 id="abc-モジュールを利用した実装">abc モジュールを利用した実装</h2>
+
+<p>まず、 <code>Animal</code> という抽象クラスを作る。「動物」という名詞はあるが、「動物」という動物はいない。なので動物はインスタンス化させない。一方でここで考慮している動物は「鳴く」ことと「走る」ことはする。</p>
+
+<p>なので、次のような実装にしよう。</p>
+
+<pre><code class="language-python">
+from abc import ABCMeta, abstractmethod
+
+class Animal(object, metaclass=ABCMeta):
+    @abstractmethod
+    def sound(self):
+      pass
+    def run(self):
+      print('スタタタタ')
+</code></pre>
+
+<p>こうすることで、まずインスタンス化できないクラスができた。</p>
+
+<pre><code class="language-python">Animal()  # =&gt;TypeError: Can't instantiate abstract class Animal with abstract methods sound
+</code></pre>
+
+<p>次に <code>Monkey</code> を実装しよう。しかし筆者はうっかり <code>Monkey</code> の <code>sound</code> メソッドを実装し忘れてしまった。</p>
+
+<pre><code class="language-python">class Monkey(Animal):
+    pass
+</code></pre>
+
+<p>このインスタンス化も失敗する。</p>
+
+<pre><code class="language-python">Monkey()  # =&gt; TypeError: Can't instantiate abstract class Monkey with abstract methods sound
+</code></pre>
+
+<p><code>@abstractmethod</code> としているので、 <code>sound</code> メソッドが定義されていない場合エラーが発生する。定義していないと失敗するので <code>sound</code> メソッドを定義し忘れる心配がない<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>。</p>
+
+<p>さて、うっかりミスを Python に教えてもらったのでミスを正そう。</p>
+
+<pre><code class="language-python">class Monkey(Animal):
+    def sound(self):
+        print('ウキー')
+
+Monkey().run()  # =&gt; スタタタタ
+Monkey().sound()  # =&gt; ウキー
+</code></pre>
+
+<p>これで <code>Dog</code> や <code>Cat</code> も <code>Animal</code> を継承するようにすれば、全部の動物に <code>sound</code> メソッドと <code>run</code> メソッドが定義されている状態が保証できる。</p>
+
+<pre><code class="language-python">class Dog(Animal):
+    def sound(self):
+        print('わんわん')
+
+class Cat(Animal):
+    def sound(self):
+        print('にゃー')
+</code></pre>
+
+<p>なお、ここで例えば <code>Dog</code> だから <code>bark()</code> とメソッド名を誤ってしまっても、やはりインスタンス化に失敗するので気付ける。</p>
+
+<h1 id="注意">注意</h1>
+
+<p>ここでは動物の共通メソッドして <code>run</code> を例に挙げたが、実際には走らない動物が居たりするように、「本当に今後も作成するクラスについても共通のメソッドなのか」あるいは「今後作成するクラスについても共通の実装なのか」ということは常に念頭に置きたい。「なんかこの2つ一緒っぽいから共通化しようぜ」という雑い考えでやると痛い目を見る(見たことがある)。</p>
+
+<p>ちなみに筆者はこれをデータを取得するクラス(データソースが MySQL になったり CSV になったり JSON になったりするが、最終的に <code>obj.load()</code> で <code>pandas.DataFrame</code> が帰ってくるようにしたい)においてこの実装を行った。データを取得し DataFrame にするまでが固有のメソッドで、 DataFrame にしたあとの処理が共通のメソッドになる。</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<ul>
+<li>抽象基底クラスというものがある</li>
+<li>クラスの定義に制限をかけることでインターフェースを統一できる</li>
+<li>「共通メソッド」がある前提
+
+<ul>
+<li>その共通メソッドは本当に今後も共通なのか?</li>
+</ul></li>
+</ul>
+
+<h1 id="実行環境">実行環境</h1>
+
+<ul>
+<li>macOS High Sierra</li>
+<li>Python 3.6.5</li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1"><code>@staticmethod</code> デコレータとかつけろよ、と怒らないでください。。。今の場合はつけるべきなのかもしれませんが、ここに書いているのは雑なコードなので。
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">ということにしておいてください。お願いします。
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">欲を言えばインスタンス化じゃなく定義時にエラーが発生して欲しいと少し思うが、そこまで調べられていない。
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/tech-memo/tech-memo/categories/python">Python</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tech-memo/tech-memo/categories/programmingtips">ProgrammingTips</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/tech-memo/post/2017/12/28/how-to-use-django-form-obj/"
+                class="button big previous">DjangoのFormオブジェクトの使い方Tips</a></li>
+    
+
+    
+</ul>
+
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;text=Abstract%20Base%20Classes%20with%20Python&amp;via=515hikaru" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;title=Abstract%20Base%20Classes%20with%20Python" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;title=Abstract%20Base%20Classes%20with%20Python" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;title=Abstract%20Base%20Classes%20with%20Python" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2ftech-memo%2fpost%2f2018%2f04%2f09%2fpython-abc-module%2f&amp;description=Abstract%20Base%20Classes%20with%20Python" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
         
     </div>
     
@@ -282,6 +769,62 @@
           
         
 
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tech-memo/post/2018/04/09/python-abc-module/">Abstract Base Classes with Python</a>
+              </h3>
+              
+              <time class="published" datetime='2018-04-09'>
+                April 9, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tech-memo/post/2017/12/28/how-to-use-django-form-obj/">DjangoのFormオブジェクトの使い方Tips</a>
+              </h3>
+              
+              <time class="published" datetime='2017-12-28'>
+                December 28, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tech-memo/post/2017/12/09/why-data-preprocessing-is-difficult/">なぜデータの前処理は難しいのか</a>
+              </h3>
+              
+              <time class="published" datetime='2017-12-09'>
+                December 9, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tech-memo/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2018-04-09'>
+                April 9, 2018
+              </time>
+            </header>
+            
+
+          </article>
         
       </div>
 

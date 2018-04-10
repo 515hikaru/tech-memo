@@ -13,10 +13,10 @@
     
     <item>
       <title>DjangoのFormオブジェクトの使い方Tips</title>
-      <link>/tech-memo/blog/2017/12/28/how-to-use-django-form-obj/</link>
+      <link>/tech-memo/post/2017/12/28/how-to-use-django-form-obj/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
       
-      <guid>/tech-memo/blog/2017/12/28/how-to-use-django-form-obj/</guid>
+      <guid>/tech-memo/post/2017/12/28/how-to-use-django-form-obj/</guid>
       <description>Django とは Django とは, Python の Web フレームワークです. Ruby でいうところの Rails 1に相当するフレームワークで, Git ホスティングサービスのBitbucket や最近「インスタ映え」で話題の Instagram にも利用されています2.
 この記事を書いている人も Django を使って Web アプリを作ったり作らなかったりしています.
 Form オブジェクト Django には当然いくつもの機能があるのですが, 筆者が一番ググるのが表題の Form オブジェクトについてです.
