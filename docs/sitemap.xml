@@ -3,24 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tech-memo/blog/2018/04/09/python-abc-module/</loc>
+    <loc>/tech-memo/post/2018/04/09/python-abc-module/</loc>
     <lastmod>2018-04-09T22:31:49+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/tech-memo/blog/2017/12/28/how-to-use-django-form-obj/</loc>
+    <loc>/tech-memo/post/2017/12/28/how-to-use-django-form-obj/</loc>
     <lastmod>2017-12-28T00:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/tech-memo/blog/2017/12/09/why-data-preprocessing-is-difficult/</loc>
+    <loc>/tech-memo/post/2017/12/09/why-data-preprocessing-is-difficult/</loc>
     <lastmod>2017-12-09T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tech-memo/blog/</loc>
-    <lastmod>2018-04-09T22:31:49+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -43,6 +37,12 @@
   <url>
     <loc>/tech-memo/categories/django/</loc>
     <lastmod>2017-12-28T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tech-memo/post/</loc>
+    <lastmod>2018-04-09T22:31:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
