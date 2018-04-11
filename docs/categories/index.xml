@@ -29,11 +29,29 @@
     </item>
     
     <item>
+      <title>Development Environment</title>
+      <link>/categories/development-environment/</link>
+      <pubDate>Wed, 11 Apr 2018 23:34:30 +0900</pubDate>
+      
+      <guid>/categories/development-environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Django</title>
       <link>/categories/django/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
       
       <guid>/categories/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>/categories/docker/</link>
+      <pubDate>Wed, 11 Apr 2018 23:34:30 +0900</pubDate>
+      
+      <guid>/categories/docker/</guid>
       <description></description>
     </item>
     
@@ -52,6 +70,15 @@
       <pubDate>Mon, 09 Apr 2018 22:31:49 +0900</pubDate>
       
       <guid>/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>/categories/testing/</link>
+      <pubDate>Wed, 11 Apr 2018 23:34:30 +0900</pubDate>
+      
+      <guid>/categories/testing/</guid>
       <description></description>
     </item>
     
