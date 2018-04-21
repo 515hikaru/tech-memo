@@ -56,6 +56,24 @@
     </item>
     
     <item>
+      <title>Management</title>
+      <link>/categories/management/</link>
+      <pubDate>Sat, 21 Apr 2018 21:52:01 +0900</pubDate>
+      
+      <guid>/categories/management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Organization</title>
+      <link>/categories/organization/</link>
+      <pubDate>Sat, 21 Apr 2018 21:52:01 +0900</pubDate>
+      
+      <guid>/categories/organization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ProgrammingTips</title>
       <link>/categories/programmingtips/</link>
       <pubDate>Mon, 09 Apr 2018 22:31:49 +0900</pubDate>
@@ -88,6 +106,15 @@
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0900</pubDate>
       
       <guid>/categories/web-app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Working</title>
+      <link>/categories/working/</link>
+      <pubDate>Sat, 21 Apr 2018 21:52:01 +0900</pubDate>
+      
+      <guid>/categories/working/</guid>
       <description></description>
     </item>
     
