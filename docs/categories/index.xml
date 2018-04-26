@@ -29,6 +29,15 @@
     </item>
     
     <item>
+      <title>DataBase</title>
+      <link>/categories/database/</link>
+      <pubDate>Thu, 26 Apr 2018 22:00:19 +0900</pubDate>
+      
+      <guid>/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Development Environment</title>
       <link>/categories/development-environment/</link>
       <pubDate>Wed, 11 Apr 2018 23:34:30 +0900</pubDate>
@@ -74,6 +83,15 @@
     </item>
     
     <item>
+      <title>Package</title>
+      <link>/categories/package/</link>
+      <pubDate>Thu, 26 Apr 2018 22:00:19 +0900</pubDate>
+      
+      <guid>/categories/package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ProgrammingTips</title>
       <link>/categories/programmingtips/</link>
       <pubDate>Mon, 09 Apr 2018 22:31:49 +0900</pubDate>
@@ -85,7 +103,7 @@
     <item>
       <title>Python</title>
       <link>/categories/python/</link>
-      <pubDate>Mon, 09 Apr 2018 22:31:49 +0900</pubDate>
+      <pubDate>Thu, 26 Apr 2018 22:00:19 +0900</pubDate>
       
       <guid>/categories/python/</guid>
       <description></description>

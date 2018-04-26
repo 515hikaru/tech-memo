@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DataBase on i was perfect</title>
+    <link>/categories/database/</link>
+    <description>Recent content in DataBase on i was perfect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Thu, 26 Apr 2018 22:00:19 +0900</lastBuildDate>
+    
+	<atom:link href="/categories/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MongoDBをPythonで操作する with GridFS</title>
+      <link>/post/2018/04/26/how-to-use-pymongo-with-gridfs/</link>
+      <pubDate>Thu, 26 Apr 2018 22:00:19 +0900</pubDate>
+      
+      <guid>/post/2018/04/26/how-to-use-pymongo-with-gridfs/</guid>
+      <description>Python から MongoDB(with GridFS)を操作する MongoDB は bson という json のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。
+今回は Python から MongoDB を使う方法についてごにょごにょと書く。
+モジュールの構成 Python から MongoDB を活用するには pymongo というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。
+mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB
+提供されているモジュールは bson, gridfs, pymongo である。直接データベースをつなぐのに必要なものが定義されているのが pymongo で、GridFS というファイルシステムを利用する場合は gridfs を利用する必要がある。
+とりあえず使う とりあえず使うには pymongo をインストールするのと MongoDB を用意する必要がある。
+pymongo のインストールは pip でいい。
+$ pip install pymongo  MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。
+$ docker run -p 27017:27017 mongo:3.</description>
+    </item>
+    
+  </channel>
+</rss>

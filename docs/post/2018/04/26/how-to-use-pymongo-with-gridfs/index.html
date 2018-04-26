@@ -1,11 +1,3 @@
-
-
-
-    
-
-
-
-
 <!DOCTYPE HTML>
 
 <html>
@@ -19,9 +11,17 @@
              "@id": "/"
         },
         "articleSection" : "post",
-        "name" : "Posts",
-        "headline" : "Posts",
-        "description" : "",
+        "name" : "MongoDBをPythonで操作する with GridFS",
+        "headline" : "MongoDBをPythonで操作する with GridFS",
+        "description" : "Python から MongoDB(with GridFS)を操作する MongoDB は bson という json のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。
+今回は Python から MongoDB を使う方法についてごにょごにょと書く。
+モジュールの構成 Python から MongoDB を活用するには pymongo というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。
+mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB
+提供されているモジュールは bson, gridfs, pymongo である。直接データベースをつなぐのに必要なものが定義されているのが pymongo で、GridFS というファイルシステムを利用する場合は gridfs を利用する必要がある。
+とりあえず使う とりあえず使うには pymongo をインストールするのと MongoDB を用意する必要がある。
+pymongo のインストールは pip でいい。
+$ pip install pymongo  MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。
+$ docker run -p 27017:27017 mongo:3.",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -29,15 +29,17 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-04-09 22:31:49 &#43;0900 JST",
-        "dateModified" : "2018-04-09 22:31:49 &#43;0900 JST",
-        "url" : "/post/",
-        "wordCount" : "0",
+        "datePublished": "2018-04-26 22:00:19 &#43;0900 JST",
+        "dateModified" : "2018-04-26 22:00:19 &#43;0900 JST",
+        "url" : "/post/2018/04/26/how-to-use-pymongo-with-gridfs/",
+        "wordCount" : "230",
         "keywords" : [ "Blog" ]
     }
     </script>
         
-            <title>Posts - i was perfect</title>
+            
+                <title>MongoDBをPythonで操作する with GridFS</title>
+            
         
 
         <meta charset="utf-8" />
@@ -54,18 +56,37 @@
         
 
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="@515hikaruの技術ブログ"/>
+<meta name="twitter:title" content="MongoDBをPythonで操作する with GridFS"/>
+<meta name="twitter:description" content="Python から MongoDB(with GridFS)を操作する MongoDB は bson という json のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。
+今回は Python から MongoDB を使う方法についてごにょごにょと書く。
+モジュールの構成 Python から MongoDB を活用するには pymongo というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。
+mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB
+提供されているモジュールは bson, gridfs, pymongo である。直接データベースをつなぐのに必要なものが定義されているのが pymongo で、GridFS というファイルシステムを利用する場合は gridfs を利用する必要がある。
+とりあえず使う とりあえず使うには pymongo をインストールするのと MongoDB を用意する必要がある。
+pymongo のインストールは pip でいい。
+$ pip install pymongo  MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。
+$ docker run -p 27017:27017 mongo:3."/>
 <meta name="twitter:site" content="@515hikaru"/>
 
-        <meta property="og:title" content="Posts" />
-<meta property="og:description" content="@515hikaruの技術ブログ" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/post/" />
+        <meta property="og:title" content="MongoDBをPythonで操作する with GridFS" />
+<meta property="og:description" content="Python から MongoDB(with GridFS)を操作する MongoDB は bson という json のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。
+今回は Python から MongoDB を使う方法についてごにょごにょと書く。
+モジュールの構成 Python から MongoDB を活用するには pymongo というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。
+mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB
+提供されているモジュールは bson, gridfs, pymongo である。直接データベースをつなぐのに必要なものが定義されているのが pymongo で、GridFS というファイルシステムを利用する場合は gridfs を利用する必要がある。
+とりあえず使う とりあえず使うには pymongo をインストールするのと MongoDB を用意する必要がある。
+pymongo のインストールは pip でいい。
+$ pip install pymongo  MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。
+$ docker run -p 27017:27017 mongo:3." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2018/04/26/how-to-use-pymongo-with-gridfs/" />
 
 
 
-<meta property="og:updated_time" content="2018-04-09T22:31:49&#43;09:00"/>
+<meta property="article:published_time" content="2018-04-26T22:00:19&#43;09:00"/>
+
+<meta property="article:modified_time" content="2018-04-26T22:00:19&#43;09:00"/>
+
 
 
 
@@ -81,9 +102,25 @@
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="@515hikaruの技術ブログ">
+<meta itemprop="name" content="MongoDBをPythonで操作する with GridFS">
+<meta itemprop="description" content="Python から MongoDB(with GridFS)を操作する MongoDB は bson という json のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。
+今回は Python から MongoDB を使う方法についてごにょごにょと書く。
+モジュールの構成 Python から MongoDB を活用するには pymongo というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。
+mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB
+提供されているモジュールは bson, gridfs, pymongo である。直接データベースをつなぐのに必要なものが定義されているのが pymongo で、GridFS というファイルシステムを利用する場合は gridfs を利用する必要がある。
+とりあえず使う とりあえず使うには pymongo をインストールするのと MongoDB を用意する必要がある。
+pymongo のインストールは pip でいい。
+$ pip install pymongo  MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。
+$ docker run -p 27017:27017 mongo:3.">
 
+
+<meta itemprop="datePublished" content="2018-04-26T22:00:19&#43;09:00" />
+<meta itemprop="dateModified" content="2018-04-26T22:00:19&#43;09:00" />
+<meta itemprop="wordCount" content="230">
+
+
+
+<meta itemprop="keywords" content="" />
 
         
 
@@ -123,6 +160,7 @@
       <div id="wrapper">
 
     
+    
 <header id="header">
     
       <h1><a href="/">post</a></h1>
@@ -153,6 +191,10 @@
     </nav>
     <nav class="main">
         <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
             
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -298,15 +340,102 @@
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;text=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS&amp;via=515hikaru" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;description=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
         
         
-            <article class="post">
+        <article class="post">
   <header>
     <div class="title">
         
-            <h2><a href="/post/2018/04/09/python-abc-module/">Abstract Base Classes with Python</a></h2>
+            <h1><a href="/post/2018/04/26/how-to-use-pymongo-with-gridfs/">MongoDBをPythonで操作する with GridFS</a></h1>
+            
         
         
     </div>
@@ -314,8 +443,8 @@
         
 
         <time class="published"
-            datetime='2018-04-09'>
-            April 9, 2018</time>
+            datetime='2018-04-26'>
+            April 26, 2018</time>
         <span class="author"></span>
         
             <p>2 minute read</p>
@@ -324,15 +453,223 @@
     </div>
 </header>
 
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;text=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS&amp;via=515hikaru" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;description=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+
+      </ul>
+    </section>
   
 
   
-  <p>最近は Java っぽい Python を書いている。いや、僕は Java を書いたことがないので本当に Java っぽいのかはよくわからないのだけれど。</p>
+
+  <div id="content">
+    
+
+<h1 id="python-から-mongodb-with-gridfs-を操作する">Python から MongoDB(with GridFS)を操作する</h1>
+
+<p>MongoDB は <code>bson</code> という <code>json</code> のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。</p>
+
+<p>今回は Python から MongoDB を使う方法についてごにょごにょと書く。</p>
+
+<h1 id="モジュールの構成">モジュールの構成</h1>
+
+<p>Python から MongoDB を活用するには <code>pymongo</code> というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。</p>
+
+<p><a href="https://github.com/mongodb/mongo-python-driver">mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB</a></p>
+
+<p>提供されているモジュールは <code>bson</code>, <code>gridfs</code>, <code>pymongo</code> である。直接データベースをつなぐのに必要なものが定義されているのが <code>pymongo</code> で、GridFS というファイルシステムを利用する場合は <code>gridfs</code> を利用する必要がある。</p>
+
+<h1 id="とりあえず使う">とりあえず使う</h1>
+
+<p>とりあえず使うには <code>pymongo</code> をインストールするのと MongoDB を用意する必要がある。</p>
+
+<p><code>pymongo</code> のインストールは <code>pip</code> でいい。</p>
+
+<pre><code>$ pip install pymongo
+</code></pre>
+
+<p>MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。</p>
+
+<pre><code>$ docker run -p 27017:27017 mongo:3.6.3
+</code></pre>
+
+<p>この状態で、次のスクリプトを実行してもエラーが出なければ正常に MongoDB が稼働している。</p>
+
+<pre><code class="language-python">import pymongo
+
+def main():
+    client = pymongo.MongoClient(host='localhost', port=27017)
+    print(client.server_info())
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+<h1 id="gridfsを使いインサート">GridFSを使いインサート</h1>
+
+<p>GridFS を利用してインサートするサンプル。</p>
+
+<p><code>gridfs.GridFS</code> はコンストラクタに MongoDB のデータベースオブジェクトを入れればよい。</p>
+
+<pre><code class="language-python">import pymongo
+import gridfs
+
+def main():
+    client = pymongo.MongoClient(host='localhost', port=27017)
+    database = client.testdb
+    fs = gridfs.GridFS(database)
+
+if __name__ == '__main__':
+    main()
+
+</code></pre>
+
+<pre><code class="language-python">import pymongo
+import gridfs
+
+
+def main():
+    client = pymongo.MongoClient(host='localhost', port=27017)
+    database = client.testdb
+    fs = gridfs.GridFS(database)
+    string = b'Hello, World!!'
+    a = fs.put(string)
+
+if __name__ == '__main__':
+    main()
+
+</code></pre>
+
+<p>この状態でオブジェクトが <code>testdb</code> の <code>fs.files</code> コレクションに次のような形式のデータがはいる。</p>
+
+<pre><code>{
+  &quot;_id&quot; : ObjectId(&quot;5ae1ac3fe5a5f02ee0763c31&quot;),
+  &quot;md5&quot; : &quot;d66305ee66a6afc5b7ef7c6810a6f467&quot;,
+  &quot;chunkSize&quot; : 261120,
+  &quot;length&quot; : 14,
+  &quot;uploadDate&quot; : ISODate(&quot;2018-04-26T10:38:55.705Z&quot;)
+}
+</code></pre>
+
+<h1 id="データを取り出す">データを取り出す</h1>
+
+<p>せっかくなので上記のデータを取り出すスクリプトを書いてみる。ここではオブジェクト ID がわかっている前提で書く。</p>
+
+<pre><code class="language-python">import pymongo
+import bson
+import gridfs
+
+def main():
+    client = pymongo.MongoClient(host='localhost', port=27017)
+    database = client.testdb
+    fs = gridfs.GridFS(database)
+    id_str = '5ae1ac3fe5a5f02ee0763c31'  # 環境によってこの id が変わる
+    get_obj = fs.get(bson.objectid.ObjectId(id_str))
+    print(get_obj.read())  # b'Hello, World!'
+
+if __name__ == '__main__':
+    main()
+
+</code></pre>
+
+<p><code>bson.objectid.ObjectId</code> id 文字列を入れてデータ型を変換しないと <code>fs.get</code> が動かないので注意。</p>
+
+<p>実際には GridFS をデータ分析基盤として活用するためには <code>metadata</code> の設計などいろいろと考えることがあるのでもっと複雑になり、あんまり書きすぎるといろいろとまずいのでこれくらいにしておく。</p>
+
+<h1 id="検証環境">検証環境</h1>
+
+<ul>
+<li>Windows 10 Pro</li>
+<li>Docker for Windows</li>
+<li>Python 3.6.5
+
+<ul>
+<li>pymongo 3.6.1</li>
+</ul></li>
+<li>MongoDB 3.6.3</li>
+</ul>
+
+  </div>
+
   <footer>
-    <ul class="actions">
-      <li><a href="/post/2018/04/09/python-abc-module/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
+    <ul class="stats">
   <li class="categories">
     <ul>
         
@@ -344,7 +681,10 @@
                 <li><a class="article-category-link" href="/categories/python">Python</a></li>
                 
                 
-                <li><a class="article-category-link" href="/categories/programmingtips">ProgrammingTips</a></li>
+                <li><a class="article-category-link" href="/categories/package">Package</a></li>
+                
+                
+                <li><a class="article-category-link" href="/categories/database">DataBase</a></li>
                 
             
         
@@ -358,145 +698,19 @@
 </ul>
 
   </footer>
+
 </article>
 
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/post/2017/12/28/how-to-use-django-form-obj/">DjangoのFormオブジェクトの使い方Tips</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
 
-        <time class="published"
-            datetime='2017-12-28'>
-            December 28, 2017</time>
-        <span class="author"></span>
-        
-            <p>2 minute read</p>
-        
-        
-    </div>
-</header>
-
-  
-
-  
-  <p><a href="https://www.djangoproject.com/">Django</a> とは, Python の Web フレームワークです. Ruby でいうところの Rails <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>に相当するフレームワークで, Git ホスティングサービスの<a href="bitbucket.org">Bitbucket</a> や最近「インスタ映え」で話題の Instagram にも利用されています<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/post/2017/12/28/how-to-use-django-form-obj/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/python">Python</a></li>
-                
-                
-                <li><a class="article-category-link" href="/categories/django">Django</a></li>
-                
-                
-                <li><a class="article-category-link" href="/categories/web-app">Web App</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/post/2017/12/09/why-data-preprocessing-is-difficult/">なぜデータの前処理は難しいのか</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-12-09'>
-            December 9, 2017</time>
-        <span class="author"></span>
-        
-            <p>2 minute read</p>
-        
-        
-    </div>
-</header>
-
-  
-
-  
-  <p>データ分析の業務工程のうち、半分以上は前処理で占められているという話がある。おそらく業界の人間であれば必ず一度は聞き、実際に実感する話であり、それ以外の人でも興味がある人であればこの話を聞いたことがあるだろう。</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/post/2017/12/09/why-data-preprocessing-is-difficult/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="/categories/python">Python</a></li>
-                
-                
-                <li><a class="article-category-link" href="/categories/data-analysis">Data Analysis</a></li>
-                
-                
-                <li><a class="article-category-link" href="/categories/data-preprocessing">Data Preprocessing</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-
-        
 <ul class="actions pagination">
     
-        <li><a href="/post/"
-                class="button big previous">Previous Page</a></li>
+        <li><a href="/post/2018/04/21/share-is-important/"
+                class="button big previous">情報共有ツールの導入の反省</a></li>
     
 
     
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
-    
 </ul>
+
 
     </div>
     

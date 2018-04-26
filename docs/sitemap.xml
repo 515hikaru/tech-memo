@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/2018/04/26/how-to-use-pymongo-with-gridfs/</loc>
+    <lastmod>2018-04-26T22:00:19+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2018/04/21/share-is-important/</loc>
     <lastmod>2018-04-21T21:52:01+09:00</lastmod>
   </url>
@@ -50,6 +55,12 @@
   </url>
   
   <url>
+    <loc>/categories/database/</loc>
+    <lastmod>2018-04-26T22:00:19+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/development-environment/</loc>
     <lastmod>2018-04-11T23:34:30+09:00</lastmod>
     <priority>0</priority>
@@ -80,8 +91,14 @@
   </url>
   
   <url>
+    <loc>/categories/package/</loc>
+    <lastmod>2018-04-26T22:00:19+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2018-04-21T21:52:01+09:00</lastmod>
+    <lastmod>2018-04-26T22:00:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -93,7 +110,7 @@
   
   <url>
     <loc>/categories/python/</loc>
-    <lastmod>2018-04-09T22:31:49+09:00</lastmod>
+    <lastmod>2018-04-26T22:00:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -122,7 +139,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-04-21T21:52:01+09:00</lastmod>
+    <lastmod>2018-04-26T22:00:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
