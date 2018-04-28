@@ -43,6 +43,10 @@
   </url>
   
   <url>
+    <loc>/contact/</loc>
+  </url>
+  
+  <url>
     <loc>/categories/data-analysis/</loc>
     <lastmod>2017-12-09T00:00:00+09:00</lastmod>
     <priority>0</priority>
