@@ -11,17 +11,12 @@
              "@id": "/"
         },
         "articleSection" : "post",
-        "name" : "MongoDBをPythonで操作する with GridFS",
-        "headline" : "MongoDBをPythonで操作する with GridFS",
-        "description" : "Python から MongoDB(with GridFS)を操作する MongoDB は bson という json のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。
-今回は Python から MongoDB を使う方法についてごにょごにょと書く。
-モジュールの構成 Python から MongoDB を活用するには pymongo というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。
-mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB
-提供されているモジュールは bson, gridfs, pymongo である。直接データベースをつなぐのに必要なものが定義されているのが pymongo で、GridFS というファイルシステムを利用する場合は gridfs を利用する必要がある。
-とりあえず使う とりあえず使うには pymongo をインストールするのと MongoDB を用意する必要がある。
-pymongo のインストールは pip でいい。
-$ pip install pymongo  MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。
-$ docker run -p 27017:27017 mongo:3.",
+        "name" : "PyenvとAnacondaを使うのをやめた",
+        "headline" : "PyenvとAnacondaを使うのをやめた",
+        "description" : "TL;DR  システムの Python と普段開発に使う Python を分けたいなら Homebrew/Linuxbrew でいいじゃん 3.5 と 3.6 とかの違いを気にするのはローカルマシンじゃなく CI とか Docker でやろう  Pyenv と Anaconda の環境を消した 入社したあとに「俺もよくわかんないけどこれを入れろ」とか言われて Pyenv と Anaconda を入れさせられた。あとで知ったがその人は Linux を使ったことがなくて、その場でググった Qiita の記事の内容をそのままわたしに伝えただけだった。それ以来惰性に惰性を重ねて Pyenv と Anaconda の併用を続けてきたが、さすがに意義を見いだせなくなってやめた。
+個人の PC から Pyenv を取り去ったのは結構前。会社の PC からも最近取り去った。 rm -rf ~/.pyenv をしてOSを再起動したらとりあえず大丈夫だった。
+Python2 と Python3 をひとつのマシンで共存させたいなら別に OS 標準のパッケージマネージャーでも可能だし、Homebrew や Linuxbrew で Python3 だけインストールしてもいい(もちろん両方インストールしてもいい)。
+たまに pip3 install と打つべきときに pip install としてしまって、 Python3 から使おうとするとモジュールのインストールができていないと言われることがあるが、それ以外のトラブルはない。それも python3 -m pip install とすればいい話だし。",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -29,16 +24,16 @@ $ docker run -p 27017:27017 mongo:3.",
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-04-26 22:00:19 &#43;0900 JST",
-        "dateModified" : "2018-04-26 22:00:19 &#43;0900 JST",
-        "url" : "/post/2018/04/26/how-to-use-pymongo-with-gridfs/",
-        "wordCount" : "230",
+        "datePublished": "2018-04-28 11:00:00 &#43;0900 JST",
+        "dateModified" : "2018-04-28 11:00:00 &#43;0900 JST",
+        "url" : "/post/2018/04/28/remove-pyenv-and-anaconda/",
+        "wordCount" : "147",
         "keywords" : [ "Blog" ]
     }
     </script>
         
             
-                <title>MongoDBをPythonで操作する with GridFS</title>
+                <title>PyenvとAnacondaを使うのをやめた</title>
             
         
 
@@ -56,36 +51,26 @@ $ docker run -p 27017:27017 mongo:3.",
         
 
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MongoDBをPythonで操作する with GridFS"/>
-<meta name="twitter:description" content="Python から MongoDB(with GridFS)を操作する MongoDB は bson という json のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。
-今回は Python から MongoDB を使う方法についてごにょごにょと書く。
-モジュールの構成 Python から MongoDB を活用するには pymongo というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。
-mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB
-提供されているモジュールは bson, gridfs, pymongo である。直接データベースをつなぐのに必要なものが定義されているのが pymongo で、GridFS というファイルシステムを利用する場合は gridfs を利用する必要がある。
-とりあえず使う とりあえず使うには pymongo をインストールするのと MongoDB を用意する必要がある。
-pymongo のインストールは pip でいい。
-$ pip install pymongo  MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。
-$ docker run -p 27017:27017 mongo:3."/>
+<meta name="twitter:title" content="PyenvとAnacondaを使うのをやめた"/>
+<meta name="twitter:description" content="TL;DR  システムの Python と普段開発に使う Python を分けたいなら Homebrew/Linuxbrew でいいじゃん 3.5 と 3.6 とかの違いを気にするのはローカルマシンじゃなく CI とか Docker でやろう  Pyenv と Anaconda の環境を消した 入社したあとに「俺もよくわかんないけどこれを入れろ」とか言われて Pyenv と Anaconda を入れさせられた。あとで知ったがその人は Linux を使ったことがなくて、その場でググった Qiita の記事の内容をそのままわたしに伝えただけだった。それ以来惰性に惰性を重ねて Pyenv と Anaconda の併用を続けてきたが、さすがに意義を見いだせなくなってやめた。
+個人の PC から Pyenv を取り去ったのは結構前。会社の PC からも最近取り去った。 rm -rf ~/.pyenv をしてOSを再起動したらとりあえず大丈夫だった。
+Python2 と Python3 をひとつのマシンで共存させたいなら別に OS 標準のパッケージマネージャーでも可能だし、Homebrew や Linuxbrew で Python3 だけインストールしてもいい(もちろん両方インストールしてもいい)。
+たまに pip3 install と打つべきときに pip install としてしまって、 Python3 から使おうとするとモジュールのインストールができていないと言われることがあるが、それ以外のトラブルはない。それも python3 -m pip install とすればいい話だし。"/>
 <meta name="twitter:site" content="@515hikaru"/>
 
-        <meta property="og:title" content="MongoDBをPythonで操作する with GridFS" />
-<meta property="og:description" content="Python から MongoDB(with GridFS)を操作する MongoDB は bson という json のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。
-今回は Python から MongoDB を使う方法についてごにょごにょと書く。
-モジュールの構成 Python から MongoDB を活用するには pymongo というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。
-mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB
-提供されているモジュールは bson, gridfs, pymongo である。直接データベースをつなぐのに必要なものが定義されているのが pymongo で、GridFS というファイルシステムを利用する場合は gridfs を利用する必要がある。
-とりあえず使う とりあえず使うには pymongo をインストールするのと MongoDB を用意する必要がある。
-pymongo のインストールは pip でいい。
-$ pip install pymongo  MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。
-$ docker run -p 27017:27017 mongo:3." />
+        <meta property="og:title" content="PyenvとAnacondaを使うのをやめた" />
+<meta property="og:description" content="TL;DR  システムの Python と普段開発に使う Python を分けたいなら Homebrew/Linuxbrew でいいじゃん 3.5 と 3.6 とかの違いを気にするのはローカルマシンじゃなく CI とか Docker でやろう  Pyenv と Anaconda の環境を消した 入社したあとに「俺もよくわかんないけどこれを入れろ」とか言われて Pyenv と Anaconda を入れさせられた。あとで知ったがその人は Linux を使ったことがなくて、その場でググった Qiita の記事の内容をそのままわたしに伝えただけだった。それ以来惰性に惰性を重ねて Pyenv と Anaconda の併用を続けてきたが、さすがに意義を見いだせなくなってやめた。
+個人の PC から Pyenv を取り去ったのは結構前。会社の PC からも最近取り去った。 rm -rf ~/.pyenv をしてOSを再起動したらとりあえず大丈夫だった。
+Python2 と Python3 をひとつのマシンで共存させたいなら別に OS 標準のパッケージマネージャーでも可能だし、Homebrew や Linuxbrew で Python3 だけインストールしてもいい(もちろん両方インストールしてもいい)。
+たまに pip3 install と打つべきときに pip install としてしまって、 Python3 から使おうとするとモジュールのインストールができていないと言われることがあるが、それ以外のトラブルはない。それも python3 -m pip install とすればいい話だし。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/2018/04/26/how-to-use-pymongo-with-gridfs/" />
+<meta property="og:url" content="/post/2018/04/28/remove-pyenv-and-anaconda/" />
 
 
 
-<meta property="article:published_time" content="2018-04-26T22:00:19&#43;09:00"/>
+<meta property="article:published_time" content="2018-04-28T11:00:00&#43;09:00"/>
 
-<meta property="article:modified_time" content="2018-04-26T22:00:19&#43;09:00"/>
+<meta property="article:modified_time" content="2018-04-28T11:00:00&#43;09:00"/>
 
 
 
@@ -102,21 +87,16 @@ $ docker run -p 27017:27017 mongo:3." />
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
-<meta itemprop="name" content="MongoDBをPythonで操作する with GridFS">
-<meta itemprop="description" content="Python から MongoDB(with GridFS)を操作する MongoDB は bson という json のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。
-今回は Python から MongoDB を使う方法についてごにょごにょと書く。
-モジュールの構成 Python から MongoDB を活用するには pymongo というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。
-mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB
-提供されているモジュールは bson, gridfs, pymongo である。直接データベースをつなぐのに必要なものが定義されているのが pymongo で、GridFS というファイルシステムを利用する場合は gridfs を利用する必要がある。
-とりあえず使う とりあえず使うには pymongo をインストールするのと MongoDB を用意する必要がある。
-pymongo のインストールは pip でいい。
-$ pip install pymongo  MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。
-$ docker run -p 27017:27017 mongo:3.">
+<meta itemprop="name" content="PyenvとAnacondaを使うのをやめた">
+<meta itemprop="description" content="TL;DR  システムの Python と普段開発に使う Python を分けたいなら Homebrew/Linuxbrew でいいじゃん 3.5 と 3.6 とかの違いを気にするのはローカルマシンじゃなく CI とか Docker でやろう  Pyenv と Anaconda の環境を消した 入社したあとに「俺もよくわかんないけどこれを入れろ」とか言われて Pyenv と Anaconda を入れさせられた。あとで知ったがその人は Linux を使ったことがなくて、その場でググった Qiita の記事の内容をそのままわたしに伝えただけだった。それ以来惰性に惰性を重ねて Pyenv と Anaconda の併用を続けてきたが、さすがに意義を見いだせなくなってやめた。
+個人の PC から Pyenv を取り去ったのは結構前。会社の PC からも最近取り去った。 rm -rf ~/.pyenv をしてOSを再起動したらとりあえず大丈夫だった。
+Python2 と Python3 をひとつのマシンで共存させたいなら別に OS 標準のパッケージマネージャーでも可能だし、Homebrew や Linuxbrew で Python3 だけインストールしてもいい(もちろん両方インストールしてもいい)。
+たまに pip3 install と打つべきときに pip install としてしまって、 Python3 から使おうとするとモジュールのインストールができていないと言われることがあるが、それ以外のトラブルはない。それも python3 -m pip install とすればいい話だし。">
 
 
-<meta itemprop="datePublished" content="2018-04-26T22:00:19&#43;09:00" />
-<meta itemprop="dateModified" content="2018-04-26T22:00:19&#43;09:00" />
-<meta itemprop="wordCount" content="230">
+<meta itemprop="datePublished" content="2018-04-28T11:00:00&#43;09:00" />
+<meta itemprop="dateModified" content="2018-04-28T11:00:00&#43;09:00" />
+<meta itemprop="wordCount" content="147">
 
 
 
@@ -365,7 +345,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//twitter.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;text=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS&amp;via=515hikaru" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;text=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f&amp;via=515hikaru" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -375,7 +355,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//plus.google.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -386,7 +366,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -396,7 +376,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//reddit.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn reddit">
+  <a href="//reddit.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;title=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
@@ -406,7 +386,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//www.linkedin.com/shareArticle?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn linkedin">
+  <a href="//www.linkedin.com/shareArticle?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;title=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f" target="_blank" class="share-btn linkedin">
       <i class="fa fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
@@ -416,7 +396,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//www.stumbleupon.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn stumbleupon">
+  <a href="//www.stumbleupon.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;title=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
@@ -426,7 +406,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;description=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn pinterest">
+  <a href="//www.pinterest.com/pin/create/button/?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;description=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f" target="_blank" class="share-btn pinterest">
     <i class="fa fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
@@ -448,7 +428,7 @@ $ docker run -p 27017:27017 mongo:3.">
   <header>
     <div class="title">
         
-            <h1><a href="/post/2018/04/26/how-to-use-pymongo-with-gridfs/">MongoDBをPythonで操作する with GridFS</a></h1>
+            <h1><a href="/post/2018/04/28/remove-pyenv-and-anaconda/">PyenvとAnacondaを使うのをやめた</a></h1>
             
         
         
@@ -457,11 +437,11 @@ $ docker run -p 27017:27017 mongo:3.">
         
 
         <time class="published"
-            datetime='2018-04-26'>
-            April 26, 2018</time>
+            datetime='2018-04-28'>
+            April 28, 2018</time>
         <span class="author"></span>
         
-            <p>2 minute read</p>
+            <p>1 minute read</p>
         
         
     </div>
@@ -476,7 +456,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//twitter.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;text=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS&amp;via=515hikaru" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;text=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f&amp;via=515hikaru" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -486,7 +466,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//plus.google.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -497,7 +477,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -507,7 +487,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//reddit.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn reddit">
+  <a href="//reddit.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;title=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
@@ -517,7 +497,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//www.linkedin.com/shareArticle?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn linkedin">
+  <a href="//www.linkedin.com/shareArticle?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;title=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f" target="_blank" class="share-btn linkedin">
       <i class="fa fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
@@ -527,7 +507,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//www.stumbleupon.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;title=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn stumbleupon">
+  <a href="//www.stumbleupon.com/submit?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;title=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
@@ -537,7 +517,7 @@ $ docker run -p 27017:27017 mongo:3.">
 
 
 <li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f26%2fhow-to-use-pymongo-with-gridfs%2f&amp;description=MongoDB%e3%82%92Python%e3%81%a7%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b%20with%20GridFS" target="_blank" class="share-btn pinterest">
+  <a href="//www.pinterest.com/pin/create/button/?url=https://tech.515hikaru.net%2fpost%2f2018%2f04%2f28%2fremove-pyenv-and-anaconda%2f&amp;description=Pyenv%e3%81%a8Anaconda%e3%82%92%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%82%84%e3%82%81%e3%81%9f" target="_blank" class="share-btn pinterest">
     <i class="fa fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
@@ -556,129 +536,75 @@ $ docker run -p 27017:27017 mongo:3.">
   <div id="content">
     
 
-<h1 id="python-から-mongodb-with-gridfs-を操作する">Python から MongoDB(with GridFS)を操作する</h1>
-
-<p>MongoDB は <code>bson</code> という <code>json</code> のような形式でデータを保存できるデータベース。あまり背景は知らないのだけれど、MySQL のような RDBMS(Relational Database Management System)とは異なる思想のデータベース。</p>
-
-<p>今回は Python から MongoDB を使う方法についてごにょごにょと書く。</p>
-
-<h1 id="モジュールの構成">モジュールの構成</h1>
-
-<p>Python から MongoDB を活用するには <code>pymongo</code> というモジュールを利用するのがよい。あまりドキュメントが親切ではないので、ちょいちょい GitHub を見ながら大体の構成を把握する。</p>
-
-<p><a href="https://github.com/mongodb/mongo-python-driver">mongodb/mongo-python-driver: PyMongo - the Python driver for MongoDB</a></p>
-
-<p>提供されているモジュールは <code>bson</code>, <code>gridfs</code>, <code>pymongo</code> である。直接データベースをつなぐのに必要なものが定義されているのが <code>pymongo</code> で、GridFS というファイルシステムを利用する場合は <code>gridfs</code> を利用する必要がある。</p>
-
-<h1 id="とりあえず使う">とりあえず使う</h1>
-
-<p>とりあえず使うには <code>pymongo</code> をインストールするのと MongoDB を用意する必要がある。</p>
-
-<p><code>pymongo</code> のインストールは <code>pip</code> でいい。</p>
-
-<pre><code>$ pip install pymongo
-</code></pre>
-
-<p>MongoDB を用意するのは、ホストにインストールしてもいいが、 Docker コンテナをひょいっと立てるのが楽。</p>
-
-<pre><code>$ docker run -p 27017:27017 mongo:3.6.3
-</code></pre>
-
-<p>この状態で、次のスクリプトを実行してもエラーが出なければ正常に MongoDB が稼働している。</p>
-
-<pre><code class="language-python">import pymongo
-
-def main():
-    client = pymongo.MongoClient(host='localhost', port=27017)
-    print(client.server_info())
-
-if __name__ == '__main__':
-    main()
-</code></pre>
-
-<h1 id="gridfsを使いインサート">GridFSを使いインサート</h1>
-
-<p>GridFS を利用してインサートするサンプル。</p>
-
-<p><code>gridfs.GridFS</code> はコンストラクタに MongoDB のデータベースオブジェクトを入れればよい。</p>
-
-<pre><code class="language-python">import pymongo
-import gridfs
-
-def main():
-    client = pymongo.MongoClient(host='localhost', port=27017)
-    database = client.testdb
-    fs = gridfs.GridFS(database)
-
-if __name__ == '__main__':
-    main()
-
-</code></pre>
-
-<pre><code class="language-python">import pymongo
-import gridfs
-
-
-def main():
-    client = pymongo.MongoClient(host='localhost', port=27017)
-    database = client.testdb
-    fs = gridfs.GridFS(database)
-    string = b'Hello, World!!'
-    a = fs.put(string)
-
-if __name__ == '__main__':
-    main()
-
-</code></pre>
-
-<p>この状態でオブジェクトが <code>testdb</code> の <code>fs.files</code> コレクションに次のような形式のデータがはいる。</p>
-
-<pre><code>{
-  &quot;_id&quot; : ObjectId(&quot;5ae1ac3fe5a5f02ee0763c31&quot;),
-  &quot;md5&quot; : &quot;d66305ee66a6afc5b7ef7c6810a6f467&quot;,
-  &quot;chunkSize&quot; : 261120,
-  &quot;length&quot; : 14,
-  &quot;uploadDate&quot; : ISODate(&quot;2018-04-26T10:38:55.705Z&quot;)
-}
-</code></pre>
-
-<h1 id="データを取り出す">データを取り出す</h1>
-
-<p>せっかくなので上記のデータを取り出すスクリプトを書いてみる。ここではオブジェクト ID がわかっている前提で書く。</p>
-
-<pre><code class="language-python">import pymongo
-import bson
-import gridfs
-
-def main():
-    client = pymongo.MongoClient(host='localhost', port=27017)
-    database = client.testdb
-    fs = gridfs.GridFS(database)
-    id_str = '5ae1ac3fe5a5f02ee0763c31'  # 環境によってこの id が変わる
-    get_obj = fs.get(bson.objectid.ObjectId(id_str))
-    print(get_obj.read())  # b'Hello, World!'
-
-if __name__ == '__main__':
-    main()
-
-</code></pre>
-
-<p><code>bson.objectid.ObjectId</code> id 文字列を入れてデータ型を変換しないと <code>fs.get</code> が動かないので注意。</p>
-
-<p>実際には GridFS をデータ分析基盤として活用するためには <code>metadata</code> の設計などいろいろと考えることがあるのでもっと複雑になり、あんまり書きすぎるといろいろとまずいのでこれくらいにしておく。</p>
-
-<h1 id="検証環境">検証環境</h1>
+<h1 id="tl-dr">TL;DR</h1>
 
 <ul>
-<li>Windows 10 Pro</li>
-<li>Docker for Windows</li>
-<li>Python 3.6.5
-
-<ul>
-<li>pymongo 3.6.1</li>
-</ul></li>
-<li>MongoDB 3.6.3</li>
+<li>システムの Python と普段開発に使う Python を分けたいなら Homebrew/Linuxbrew でいいじゃん</li>
+<li>3.5 と 3.6 とかの違いを気にするのはローカルマシンじゃなく CI とか Docker でやろう</li>
 </ul>
+
+<h1 id="pyenv-と-anaconda-の環境を消した">Pyenv と Anaconda の環境を消した</h1>
+
+<p>入社したあとに「俺もよくわかんないけどこれを入れろ」とか言われて Pyenv と Anaconda を入れさせられた。あとで知ったがその人は Linux を使ったことがなくて、その場でググった Qiita の記事の内容をそのままわたしに伝えただけだった。それ以来惰性に惰性を重ねて Pyenv と Anaconda の併用を続けてきたが、さすがに意義を見いだせなくなってやめた。</p>
+
+<p>個人の PC から Pyenv を取り去ったのは結構前。会社の PC からも最近取り去った。 <code>rm -rf ~/.pyenv</code> をしてOSを再起動したらとりあえず大丈夫だった。</p>
+
+<p>Python2 と Python3 をひとつのマシンで共存させたいなら別に OS 標準のパッケージマネージャーでも可能だし、Homebrew や Linuxbrew で Python3 だけインストールしてもいい(もちろん両方インストールしてもいい)。</p>
+
+<p>たまに <code>pip3 install</code> と打つべきときに <code>pip install</code> としてしまって、 Python3 から使おうとするとモジュールのインストールができていないと言われることがあるが、それ以外のトラブルはない。それも <code>python3 -m pip install</code> とすればいい話だし。</p>
+
+<h2 id="なぜやめられなかったのか">なぜやめられなかったのか</h2>
+
+<ul>
+<li>惰性</li>
+<li>怠慢</li>
+</ul>
+
+<p>正直なところなぜ今までやめなかったのかわからない。会社では基本 Python3.5 以降しか使わないし、単一の Python のバージョンしか必要としていない。CI などがコケて複数のバージョンをサポートするためには都度 Docker コンテナか Vagrant を準備すれば十分だし。</p>
+
+<h2 id="なぜやめたかったのか">なぜやめたかったのか</h2>
+
+<h3 id="環境変数関連の不具合">環境変数関連の不具合</h3>
+
+<p>きっかけになったのが、 Vim が参照している Python とシェルが参照している Python が違う問題。おかげでシェルからは使えるものが Vim からは使えないとかいうことが起き、それを機にやめようかと考え始めた。</p>
+
+<p>結局 Anaconda も Pyenv も環境変数をどういじっているのかよくわからないし、上述のように 3.5 と 3.6 とを共存させたいというモチベーションもほとんどなかったので、余計なことせず単一のバージョンを普通にインストールしようと思い始めた次第。</p>
+
+<h3 id="conda-コマンド使わない">conda コマンド使わない</h3>
+
+<p>弊社ではパッケージ管理を <code>conda</code> でやっている人がわりといるが、わたしは <code>pip</code> を使うことにこだわっている。 <code>conda</code> は基本使わないようにしていたので、移行後も特に困ることはなかった。</p>
+
+<p>Windows ではたまにふつうに <code>pip install</code> ができないものもあって、ちょっと面倒だが、わりと有名なモジュールなら親切なのでドキュメントが整備されていたりする(<code>xgboost</code> とか)。今のところ大きく困っては居ない。</p>
+
+<h1 id="どのようにバージョンごとの差異を確認しているか">どのようにバージョンごとの差異を確認しているか</h1>
+
+<p>今までは <code>conda</code> で仮想環境を作って 3.5 とか 3.6 とかやっていたが、今は <code>virtualenv venv</code> を各プロジェクトごとに作っている。これだとホストマシンにインストールされている Python のバージョン<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>の仮想環境しか作ることができないんだけど、別に困っていない。</p>
+
+<p>3.5 と 3.6 の両方で動くことを確認するとかは、基本的に「諦めて単一のバージョンのみ保証する」か、「CI でチェック」するようにしている。</p>
+
+<p>単一のバージョンのみ保証するのは、たとえば環境ごと Docker に閉じ込めてしまって開発もテストも本番もバージョンは「ぜったいにコレ」と言えるものに固定するのはいまや難しい話ではない。</p>
+
+<p>複数の処理系をマシンに用意して実行する必要はなくて、ほげほげ CI みたいなサービスのおかげで複数のバージョンでテストをすることなんて結構簡単。複数のバージョンをサポートしないといけないスクリプトはそのようにする。</p>
+
+<h1 id="結論">結論</h1>
+
+<ul>
+<li>使う必要がないものを無意味に使わない。
+
+<ul>
+<li>大は小を兼ねるかもしれないが大きすぎて不都合なこともある。</li>
+</ul></li>
+<li>「やめたいとき」がやめどき</li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">基本3.6
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
 
   </div>
 
@@ -695,10 +621,7 @@ if __name__ == '__main__':
                 <li><a class="article-category-link" href="/categories/python">Python</a></li>
                 
                 
-                <li><a class="article-category-link" href="/categories/package">Package</a></li>
-                
-                
-                <li><a class="article-category-link" href="/categories/database">DataBase</a></li>
+                <li><a class="article-category-link" href="/categories/development-environment">Development Environment</a></li>
                 
             
         
@@ -718,13 +641,10 @@ if __name__ == '__main__':
 
 <ul class="actions pagination">
     
-        <li><a href="/post/2018/04/21/share-is-important/"
-                class="button big previous">情報共有ツールの導入の反省</a></li>
+        <li><a href="/post/2018/04/26/how-to-use-pymongo-with-gridfs/"
+                class="button big previous">MongoDBをPythonで操作する with GridFS</a></li>
     
 
-    
-        <li><a href="/post/2018/04/28/remove-pyenv-and-anaconda/"
-                class="button big next">PyenvとAnacondaを使うのをやめた</a></li>
     
 </ul>
 

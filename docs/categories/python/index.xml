@@ -6,10 +6,22 @@
     <description>Recent content in Python on i was perfect</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 26 Apr 2018 22:00:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Apr 2018 11:00:00 +0900</lastBuildDate>
     
 	<atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PyenvとAnacondaを使うのをやめた</title>
+      <link>/post/2018/04/28/remove-pyenv-and-anaconda/</link>
+      <pubDate>Sat, 28 Apr 2018 11:00:00 +0900</pubDate>
+      
+      <guid>/post/2018/04/28/remove-pyenv-and-anaconda/</guid>
+      <description>TL;DR  システムの Python と普段開発に使う Python を分けたいなら Homebrew/Linuxbrew でいいじゃん 3.5 と 3.6 とかの違いを気にするのはローカルマシンじゃなく CI とか Docker でやろう  Pyenv と Anaconda の環境を消した 入社したあとに「俺もよくわかんないけどこれを入れろ」とか言われて Pyenv と Anaconda を入れさせられた。あとで知ったがその人は Linux を使ったことがなくて、その場でググった Qiita の記事の内容をそのままわたしに伝えただけだった。それ以来惰性に惰性を重ねて Pyenv と Anaconda の併用を続けてきたが、さすがに意義を見いだせなくなってやめた。
+個人の PC から Pyenv を取り去ったのは結構前。会社の PC からも最近取り去った。 rm -rf ~/.pyenv をしてOSを再起動したらとりあえず大丈夫だった。
+Python2 と Python3 をひとつのマシンで共存させたいなら別に OS 標準のパッケージマネージャーでも可能だし、Homebrew や Linuxbrew で Python3 だけインストールしてもいい(もちろん両方インストールしてもいい)。
+たまに pip3 install と打つべきときに pip install としてしまって、 Python3 から使おうとするとモジュールのインストールができていないと言われることがあるが、それ以外のトラブルはない。それも python3 -m pip install とすればいい話だし。</description>
+    </item>
     
     <item>
       <title>MongoDBをPythonで操作する with GridFS</title>
