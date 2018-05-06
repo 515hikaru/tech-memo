@@ -13,7 +13,7 @@ canonifyURLs = true
 
 [params]
   # Sets the meta tag description
-  description          = "@515hikaruの技術ブログ"
+  description          = "515hikaruの技術ブログ"
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = "I WAS PERFECT"
   # Sets where "View More Posts" links
@@ -79,13 +79,13 @@ canonifyURLs = true
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
   [params.intro.pic]
-    src       = "/img/main/logo.jpg"
+    src       = "images/logo.png"
     # Sets Image to be a cirlce
-    circle    = false
+    circle    = true
     # Sets Image to be Future Imperfect's hexagon
     imperfect = true
     width     = ""
-    alt       = "Hugo Future Imperfect"
+    alt       = "I WAS PERFECT"
 
 [params.postAmount]
 # Sets the number of recent posts to show in the sidebar. The default value is 5.
