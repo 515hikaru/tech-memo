@@ -1,6 +1,6 @@
 ---
 title: "About"
-date: 2018-04-11T00:09:36+09:00
+date: 2018-05-07T00:00:00+09:00
 draft: false
 ---
 
@@ -10,7 +10,9 @@ draft: false
 
 数学科卒のソフトウェアエンジニアです。AIベンチャーで働いている、新卒2年目の25歳です。
 
-# 大学時代
+# 経歴
+
+## 大学時代
 
 - 大学では代数学をやっていた
   - 可換環論とか好き
@@ -18,6 +20,7 @@ draft: false
   - 自分の作業を楽にするためのスクリプトを書くのが趣味
 - 当時書いていたプログラミング言語: C 言語 Ruby
 - 趣味で Linux を利用していた(Ubuntu, Arch Linux etc...)
+- 1ヶ月くらいで Haskell の入門書(すごい Haskell 楽しく学ぼう!)を読んだ
 
 ## 当時作ったもの
 
@@ -26,7 +29,7 @@ draft: false
 - LaTeX の記法の一部をはてなブログの数式記法に変換するスクリプト(Ruby)
 - CSV から整形済みの HTML を作成するスクリプト(JavaScript)
 
-# 就職後
+## 就職後
 
 - 仕事では Python(3) を主に書いている
   - 極稀に R を書くこともあったがほとんど書いていない
@@ -42,7 +45,7 @@ draft: false
   - 夏の3連休に勢いと Django の勉強を兼ねて作った
   - 結局常用には至らなかったが Django の勉強にはなった
 
-# 最近の嗜好
+# 最近の嗜好・興味
 
 ## 機械学習システムを作りたい
 
@@ -56,6 +59,48 @@ draft: false
 
 中でも自分はいまはサーバーサイドと運用に興味がある。
 
+# 経験
+
+## 実務経験
+
+- OS: Linux
+- プログラミング言語: Python3
+- Webフレームワーク: Django, falcon
+- 機械学習ライブラリ: scikit-learn, keras, gensim(word2vec)
+- ソースコード管理: Git
+- Git ホスティング: GitBucket, GitLab
+  - チケット管理も兼ねる
+- CI: Jenkins, GitLab CI
+- チャットツール: Slack, Microsoft Teams
+
+## その他
+
+実務経験がないことについて書きたいことを書く。
+
+### 好きなプログラミング言語
+
+* Haskell
+* Golang
+* Scala
+
+一貫した思想を持っているものが好きで、思想の種類とか、誰が作ったとか、どんなパラダイムかとかは重要視していない。
+上記のいずれかの言語で実務経験を積んでみたいと考えている(現時点では業務で利用したことはない)。
+
+### 書いた技術記事
+
+下記の記事はわたしがどんな技術へ興味を持っているかを表していると思う。
+
+- [なぜデータの前処理は難しいのか](https://tech.515hikaru.net/post/2017/12/09/why-data-preprocessing-is-difficult/)
+- [Abstract Base Classes with Python](https://tech.515hikaru.net/post/2018/04/09/python-abc-module/)
+- [get\_dummies\(pandas\)について \- Diary over Finite Fields](http://blog.515hikaru.net/entry/2017/11/08/083309)
+- [http://blog.515hikaru.net/entry/2017/10/19/220748 自分なりに整理してみた: Pythonの mutable オブジェクトの罠 - Diary over Finite Fields]
+
+### GitHub
+
+個人でも GitHub は活用している。アカウントは [515hikaru \(Takahiro Kojima\)](https://github.com/515hikaru)
+
 # Contact
 
 連絡は Twitter([@515hikaru](https://twitter.com/515hikaru))か E-mail (12kojima.takahiro[at]gmail.com)にお願いします。
+
+このブログに関することであれば、[リポジトリのIssues](https://github.com/515hikaru/tech-memo/issues) でも大丈夫です。
