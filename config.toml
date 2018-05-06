@@ -12,7 +12,6 @@ canonifyURLs = true
 
 
 [params]
-  images = "/image/logo.png"
   # Sets the meta tag description
   description          = "515hikaruの技術ブログ"
   # Sets the navbarTitle that appears in the top left of the navigation bar
