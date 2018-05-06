@@ -12,7 +12,7 @@ draft: false
 
 このブログは Hugo という Static Site Generatior を利用し作成しました。テーマは[hugo-future-imperfect](https://github.com/jpescador/hugo-future-imperfect)を利用させてもらっています。
 
-ホスト先は GitHub Pages で、リポジトリは[こちら](https://github.com/515hikaru/tech-memo)です。
+ホスト先は [Netlify](https://www.netlify.com/) で、リポジトリは[こちら](https://github.com/515hikaru/tech-memo)です。
 
 # About ME
 
