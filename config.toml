@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "ja-jp"
-title = "i was perfect"
+title = "I was Perfect"
 publishdir = "docs"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
