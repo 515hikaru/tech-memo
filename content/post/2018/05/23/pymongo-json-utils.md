@@ -1,6 +1,6 @@
 ---
 title: "PymongoのBSONとJSONの変換"
-date: 2018-05-23T01:00:00+09:00
+date: 2018-05-23T00:15:00+09:00
 draft: false
 ---
 
