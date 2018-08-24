@@ -10,6 +10,8 @@ categories: ["Python", "NumPy"]
 - Python 3.6.5
 - NumPy: 1.15.1
 
+なおいずれのコードも `import numpy as np` をしていることを前提に書いている。
+
 # 本題
 
 驚いた話。1次元配列を適当に用意する。
