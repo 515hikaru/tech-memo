@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://tech.515hikaru.net"
 languageCode = "ja-jp"
 title = "I was Perfect"
 publishdir = "docs"
