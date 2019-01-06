@@ -90,8 +90,8 @@ draft: false
 
 下記の記事はわたしがどんな技術へ興味を持っているかを表していると思う。
 
-- [なぜデータの前処理は難しいのか](https://tech.515hikaru.net/post/2017/12/09/why-data-preprocessing-is-difficult/)
-- [Abstract Base Classes with Python](https://tech.515hikaru.net/post/2018/04/09/python-abc-module/)
+- [なぜデータの前処理は難しいのか](/why-data-preprocessing-is-difficult/)
+- [Abstract Base Classes with Python](/python-abc-module/)
 - [get\_dummies\(pandas\)について \- Diary over Finite Fields](http://blog.515hikaru.net/entry/2017/11/08/083309)
 - [自分なりに整理してみた: Pythonの mutable オブジェクトの罠 - Diary over Finite Fields](http://blog.515hikaru.net/entry/2017/10/19/220748)
 
