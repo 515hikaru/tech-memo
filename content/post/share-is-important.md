@@ -2,7 +2,7 @@
 title: "情報共有ツールの導入の反省"
 date: 2018-04-21T21:52:01+09:00
 draft: false
-categories: ["Working", "Management", "Organization"]
+tags: ["Working", "Management", "Organization"]
 ---
 
 # 社内Wikiの導入

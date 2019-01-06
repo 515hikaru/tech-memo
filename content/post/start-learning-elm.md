@@ -2,7 +2,7 @@
 title: "Elmの勉強を始めた"
 date: 2019-01-04T22:42:27+09:00
 draft: false
-categories: ["Studying"]
+tags: ["Studying"]
 ---
 
 # Elm 書き始めた

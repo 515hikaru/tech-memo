@@ -2,7 +2,7 @@
 title: "PymongoのBSONとJSONの変換"
 date: 2018-05-23T00:15:00+09:00
 draft: false
-categories: ["Python", "DataBase", "Testing"]
+tags: ["Python", "DataBase", "Testing"]
 ---
 
 なんかちょっとしたメモ。ちょっとしたことをしたいのにちょっとしたことを書きたくなるくらい `pymongo` は「ようわからん」と思っている時間が長かった。

@@ -2,7 +2,7 @@
 title: "受託開発における推薦システム"
 date: 2018-10-13T21:50:41+09:00
 draft: false
-categories: ["Working", "Data Analysis"]
+tags: ["Working", "Data Analysis"]
 ---
 
 # はじめに

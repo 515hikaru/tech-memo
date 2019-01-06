@@ -2,7 +2,7 @@
 title: "なぜデータの前処理は難しいのか"
 date: 2017-12-09T00:00:00+09:00
 draft: false
-categories: ["Python", "Data Analysis", "Data Preprocessing"]
+tags: ["Python", "Data Analysis", "Data Preprocessing"]
 ---
 
 データ分析の業務工程のうち、半分以上は前処理で占められているという話がある。おそらく業界の人間であれば必ず一度は聞き、実際に実感する話であり、それ以外の人でも興味がある人であればこの話を聞いたことがあるだろう。

@@ -2,7 +2,7 @@
 title: "PyenvとAnacondaを使うのをやめた"
 date: 2018-04-28T11:00:00+09:00
 draft: false
-categories: ["Python", "Development Environment"]
+tags: ["Python", "Development Environment"]
 ---
 
 # TL;DR

@@ -2,7 +2,7 @@
 title: "Pytestの簡単なTips"
 date: 2018-10-14T21:09:09+09:00
 draft: false
-categories: ["Python", "Testing"]
+tags: ["Python", "Testing"]
 ---
 
 # Pytest の Tips

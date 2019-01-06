@@ -2,7 +2,7 @@
 title: "numpyの配列のキャスト"
 date: 2018-08-25T01:08:04+09:00
 draft: false
-categories: ["Python", "NumPy"]
+tags: ["Python", "NumPy"]
 ---
 
 # 検証環境

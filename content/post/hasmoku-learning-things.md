@@ -2,7 +2,7 @@
 title: "Haskell-jp もくもく会で勉強したことメモ"
 date: 2018-04-29T00:00:00+09:00
 draft: false
-categories: ["Haskell", "Studying"]
+tags: ["Haskell", "Studying"]
 ---
 
 [Haskell-jp もくもく会](https://haskell-jp.connpass.com/event/82494/)に参加してきた。
