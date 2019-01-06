@@ -50,5 +50,11 @@ pygmentsStyle = "pygments"
   showActiveNav = true
   containerMaxWidth = "700px"
   dateFormat = "Jan 2, 2006"
-  homeText = "Welcome to the @515hikaru tech memo blog."
-  footerText = "Made with [Hugo](https://gohugo.io/) & [Vanilla](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme)"
+  homeText = """
+  [Takahiro Kojima(a.k.a. 515hikaru)](https://github.com/515hikaru/) のメモ帳です。
+
+  [About](/about): 自己紹介です。
+
+  [Blog](/post): 記事一覧です。
+  """
+  footerText = "Author: [@515hikaru](twitter.com/515hikaru)"
