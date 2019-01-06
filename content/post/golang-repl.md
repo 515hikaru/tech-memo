@@ -2,7 +2,7 @@
 title: "Go言語でつくるインタプリタを読んだ"
 date: 2018-09-29T21:00:00+09:00
 draft: false
-categories: ["Golang", "Studying"]
+tags: ["Golang", "Studying"]
 ---
 
 # Go 言語で Monkey 言語のインタプリタをつくった

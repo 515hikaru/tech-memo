@@ -2,7 +2,7 @@
 title: "DjangoのFormオブジェクトの使い方Tips"
 date: 2017-12-28T00:00:00+09:00
 draft: false
-categories: ["Python", "Django", "Web App"]
+tags: ["Python", "Django", "Web App"]
 ---
 
 # Django とは

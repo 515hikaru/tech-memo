@@ -2,7 +2,7 @@
 title: "MongoDBをPythonで操作する with GridFS"
 date: 2018-04-26T22:00:19+09:00
 draft: false
-categories: ["Python", "Package", "DataBase"]
+tags: ["Python", "Package", "DataBase"]
 ---
 
 # Python から MongoDB(with GridFS)を操作する

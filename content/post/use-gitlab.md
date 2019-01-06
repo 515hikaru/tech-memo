@@ -2,7 +2,7 @@
 title: "GitLabを使い倒す"
 date: 2018-10-26T00:20:56+09:00
 draft: false
-categories: ["Development Environment"]
+tags: ["Development Environment"]
 ---
 
 # GitLabの紹介

@@ -2,7 +2,7 @@
 title: "Dockerってべんり"
 date: 2018-04-11T23:34:30+09:00
 draft: false
-categories: ["Docker", "Testing", "Development Environment"]
+tags: ["Docker", "Testing", "Development Environment"]
 ---
 
 この記事は何かの解説、というよりは最近の感想である。
