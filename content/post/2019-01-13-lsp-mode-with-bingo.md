@@ -66,4 +66,4 @@ GO111MODULE=on go install
   (add-hook 'before-save-hook 'lsp-format-buffer))
 ```
 
-もし `goimports` を `go fmt` の代わりに使いたいときはどうすればいいんだろう、とちょっと思ったけど考えないことにした。保存するたびに使っていない `import` が消される挙動は個人的にはあまり好きじゃない。
+lsp-modeのLanguage Serverの起動設定は https://github.com/emacs-lsp/lsp-mode/blob/master/lsp-clients.el をみればわかるようだ。このファイルを見れば設定を変えられそうだが、とりあえず今はデフォルトの挙動でいいかなと思っている。
