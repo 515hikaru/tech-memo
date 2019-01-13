@@ -2,7 +2,7 @@
 title: "2019年が始まったのでEmacsを使い始めた"
 date: 2019-01-06T19:00:00+09:00
 draft: false
-tags: ["Emacs", "Development Environment"]
+tags: ["Editor", "Emacs", "Development Environment"]
 ---
 
 なんか何度も Emacs に入門しては結局使わなくなるを繰り返していたのだけど、 [Emacs JP が再始動された](https://emacs-jp.github.io/2019/01/01/reboot-emacs-jp)らしいし、自分も Elm をやってみようと思ってやっぱり [Haskell のときと同じように](https://blog.515hikaru.net/entry/2016/09/12/021206) Emacs で環境つくりたいよなと。そこでもうメインエディタを Emacs にしちゃえばいいか!w というノリで始めました。
