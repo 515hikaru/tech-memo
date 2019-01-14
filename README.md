@@ -1,4 +1,6 @@
-# tech-memo
+# I Was Perfect
+
+![logo](static/logo.png)
 
 [@515hikaru](https://github.com/515hikaru)の技術ブログを管理するリポジトリ。
 
