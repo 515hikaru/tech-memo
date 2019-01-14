@@ -1,6 +1,6 @@
 # I Was Perfect
 
-![logo](static/logo.png =250x)
+<img src="static/logo.png" alt="logo" width="250px" height="250px" />
 
 [@515hikaru](https://github.com/515hikaru)の技術ブログを管理するリポジトリ。
 
