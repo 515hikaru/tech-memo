@@ -13,3 +13,4 @@
 * Twitter: [@515hikaru](https://twitter.com/515hikaru)
 * GitHub: [@515hikaru](https://github.com/515hikaru)
 * Qiita: [@515hikaru](https://qiita.com/515hikaru)
+* はてなブログ: [Diary over Finite Fields](https://blog.515hikaru.net)
