@@ -15,7 +15,7 @@ draft: false
 
 ## 普段いる場所
 
-Twitter または GitHub または GitLab にいます。どこにも居なかったら仕事中かひとりで居たいときです。
+[Twitter](https://twitter.com/515hikaru) または [GitHub](https://github.com/515hikaru) または [GitLab](https://gitlab.com/515hikaru) にいます。どこにも居なかったら仕事中かひとりで居たいときです。
 
 ## 仕事
 
