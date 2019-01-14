@@ -8,10 +8,34 @@
     {{ $title = .Site.Title }}
   {{ end }}
   <title>{{ $title }}</title>
+  {{ if .Description }}
+  <meta name="description" content="{{ .Description }}">
+  <meta property="og:description" content="{{ .Description }}">
+  <meta name="twitter:description" content="{{ .Description }}">
+  {{ else }}
+  {{ if .IsPage }}
+  <meta name="description" content="{{ .Summary }}...">
+  <meta property="og:description" content="{{ .Summary }}...">
+  <meta name="twitter:description" content="{{ .Summary }}...">
+  {{ else }}
+  {{ if .IsHome }}
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+  <meta name="twitter:description" content="{{ .Site.Params.description }}">
+  {{ else }}
+  <!-- 同じdescriptionのページが重複することを避ける -->
+  <meta name="description" content="{{ .Title }}に関連する記事の一覧です。{{ .Site.Params.description }}">
+  <meta property="og:description" content="{{ .Title }}に関連する記事の一覧です。{{ .Site.Params.description }}">
+  <meta name="twitter:description" content="{{ .Title }}に関連する記事の一覧です。{{ .Site.Params.description }}">
+  {{ end }}
+  {{ end }}
+  {{ end }}
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@515hikaru" />
+  <meta name="twitter:site" content="@{{ .Site.Params.twitter }}">
+  <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}">
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:url" content="{{ .Permalink }}">
   <meta property="og:title" content="{{ .Title }}" />
-  <meta property="og:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:image" content="{{ .Site.BaseURL }}/images/logo.png" />
   <meta property="og:image:type" content="image/png">
