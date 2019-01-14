@@ -50,4 +50,5 @@ pygmentsStyle = "pygments"
   showActiveNav = true
   containerMaxWidth = "700px"
   dateFormat = "Jan 2, 2006"
+  description = "@515hikaruの技術メモ"
   footerText = "Copyright 2017 Takahiro Kojima All Rights Reserved."
