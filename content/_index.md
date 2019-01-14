@@ -9,8 +9,8 @@
 
 ## Contact & SNS
 
-* Mail: 12kojima.takahiro[at]gmail.com
-* Twitter: [@515hikaru](https://twitter.com/515hikaru)
-* GitHub: [@515hikaru](https://github.com/515hikaru)
-* Qiita: [@515hikaru](https://qiita.com/515hikaru)
-* はてなブログ: [Diary over Finite Fields](https://blog.515hikaru.net)
+* <i class="far fa-envelope"></i> 12kojima.takahiro[at]gmail.com
+* <i class="fab fa-twitter"></i> [@515hikaru](https://twitter.com/515hikaru)
+* <i class="fab fa-github"></i> [@515hikaru](https://github.com/515hikaru)
+* <img src="/qiita-favicon.png" alt="Qiita" width="15px" height="15px" /> [@515hikaru](https://qiita.com/515hikaru)
+* <img src="/hatena-blog-logo-s.png" alt="はてなブログ" width="15px" height="15px" /> [Diary over Finite Fields](https://blog.515hikaru.net)
