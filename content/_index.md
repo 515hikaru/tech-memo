@@ -1,7 +1,8 @@
-## サイト紹介
+## Site Overview
 
 * [About](/about): 自己紹介ページ
 * [Blog](/post): 記事一覧
+* [Tags](/tags): 記事のタグ一覧
 
 このブログは[GitHub](https://github.com/515hikaru/tech-memo)で管理しています。
 
