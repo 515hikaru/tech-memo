@@ -22,9 +22,3 @@
 <a class="github-button" href="https://github.com/515hikaru/tech-memo" data-icon="octicon-star" aria-label="Star 515hikaru/tech-memo on GitHub">Star</a>
 
 <img src="https://grass-graph.moshimo.works/images/515hikaru.png">
-
-### Twitter
-
-<a href="https://twitter.com/515hikaru?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @515hikaru</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<a class="twitter-timeline" data-width="640" data-height="960" data-theme="light" href="https://twitter.com/515hikaru?ref_src=twsrc%5Etfw">Tweets by 515hikaru</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
