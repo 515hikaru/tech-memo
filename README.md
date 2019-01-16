@@ -14,9 +14,15 @@
 
 - 日々の開発で知り得た技術的な知見の備忘録
 - 自分が勉強したことの公表
+    - かっちりした記事よりも気軽にとるメモのような形の記事が多い
 
 # その他
 
-- 書きたいことは Issues に起票していく
+- 書きたいことは Issues に起票していったり直にコミットしたりする
 - 筆者の語学力の都合で日本語のみの提供
-- Netlify で配信している
+
+# Special Thanks
+
+- [Hugo](https://gohugo.io/): 静的サイトジェネレータ。HTMLファイルはこれでビルドしている。
+- [zwbetz-gh/vanilla-bootstrap-hugo-theme](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme/tree/dc8c6f2893dede98c600bdf930d2078204dba217): Hugoのテーマ。これを多少カスタマイズして使用している。
+- [Netlify](https://www.netlify.com/): https://tech.515hikaru.net を配信している
