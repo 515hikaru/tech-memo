@@ -24,5 +24,5 @@
 # Special Thanks
 
 - [Hugo](https://gohugo.io/): 静的サイトジェネレータ。HTMLファイルはこれでビルドしている。
-- [zwbetz-gh/vanilla-bootstrap-hugo-theme](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme/tree/dc8c6f2893dede98c600bdf930d2078204dba217): Hugoのテーマ。これを多少カスタマイズして使用している。
+- [zwbetz-gh/vanilla-bootstrap-hugo-theme](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme/): Hugoのテーマ。これを多少カスタマイズして使用している。
 - [Netlify](https://www.netlify.com/): https://tech.515hikaru.net を配信している
