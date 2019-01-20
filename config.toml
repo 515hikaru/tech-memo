@@ -1,5 +1,6 @@
 baseURL = "https://tech.515hikaru.net"
 languageCode = "ja-jp"
+defaultContentLanguage = "ja"
 title = "I Was Perfect"
 # Uncomment below to enable theme
 theme = "vanilla-bootstrap-hugo-theme"
