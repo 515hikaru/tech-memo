@@ -15,7 +15,6 @@ pygmentsStyle = "pygments"
 
 [permalinks]
   post = "/:filename/"
-  about = "/about/"
 
 # See https://feathericons.com/
 # The value of pre is the icon name
