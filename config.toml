@@ -30,7 +30,7 @@ pygmentsStyle = "pygments"
     url = "/post/"
     weight = 2
   [[menu.main]]
-    name = "About"
+    name = "自己紹介"
     pre = "smile"
     url = "/about/"
     weight = 3
