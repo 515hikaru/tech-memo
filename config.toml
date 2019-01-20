@@ -15,6 +15,7 @@ pygmentsStyle = "pygments"
 
 [permalinks]
   post = "/:filename/"
+  about = "/about/"
 
 # See https://feathericons.com/
 # The value of pre is the icon name
@@ -30,7 +31,7 @@ pygmentsStyle = "pygments"
     url = "/post/"
     weight = 2
   [[menu.main]]
-    name = "自己紹介"
+    name = "About"
     pre = "smile"
     url = "/about/"
     weight = 3
