@@ -1,8 +1,8 @@
 ---
 title: "自己紹介"
+type: "about"
 draft: false
 ---
-
 
 (Last Update: 2019/01/15)
 
