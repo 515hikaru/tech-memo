@@ -1,5 +1,5 @@
 ---
-title: "コードを再利用するくらいならOSSにコミットしろ"
+title: "コードを再利用するくらいなら OSS にコミットしろ"
 date: 2019-01-27T15:50:26+09:00
 draft: false
 tags: ["organization"]
