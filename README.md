@@ -1,5 +1,7 @@
 # I Was Perfect
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9a408c78-7414-492d-98cf-730d85bd37e9/deploy-status)](https://app.netlify.com/sites/tech-515hikaru/deploys)s
+
 <p align="center" >
   <img src="static/logo.png" alt="logo" width="320px" height="320px" />
 </p>
