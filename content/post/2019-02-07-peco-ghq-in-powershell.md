@@ -2,6 +2,7 @@
 title: "pecoとghqの組み合わせをpowershellでもやりたい"
 date: 2019-02-07T00:00:00+09:00
 draft: false
+tags: ["Windows", "PowerShell"]
 ---
 
 # ghq + peco
