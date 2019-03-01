@@ -89,19 +89,13 @@ Postgres のホスト名を links で指定した名前にする必要がある�
 ```elixir
 # config/dev.exs
 
-host_name =
-  case System.get_env("POSTGRES_HOST") do
-    nil -> "localhost"
-    x -> x
-  end
-
 # Configure your database
 config :api, Api.Repo,
   username: "postgres",
   password: "postgres",
   database: "api_dev",
   hostname: "localhost",
-  hostname: host_name,
+  hostname: System.get_env("POSTGRES_HOST") || "localhost",
   pool_size: 10
 ```
 
