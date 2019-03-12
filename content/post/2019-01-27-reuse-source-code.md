@@ -2,7 +2,7 @@
 title: "コードを再利用するくらいならOSSにコミットしろ"
 date: 2019-01-27T15:50:26+09:00
 draft: false
-tags: ["organization"]
+tags: ["Organization"]
 ---
 
 ムカついたので書く。これは悪口だ。
