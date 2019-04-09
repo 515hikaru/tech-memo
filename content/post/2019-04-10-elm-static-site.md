@@ -2,7 +2,7 @@
 title: "Elm で静的サイト"
 date: 2019-04-10T00:00:00+09:00
 draft: false
-tags: ["Elm", "BuildTool"]
+tags: ["Elm", "Development Environment"]
 ---
 
 Elm で静的サイトの構築をしている。
