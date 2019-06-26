@@ -31,6 +31,10 @@ study.optimize(objective, n_trials=100)  # Invoke optimization of the objective 
 
 と、そこでPythonは関数がファーストオブジェクトであることを思い出して、高階関数を書けばいいだけだったと思い至った。
 
+# サンプル例
+
+下記の [Optuna のランディングページ](https://optuna.org/) のQuick Startにあるサンプルコードを使う。
+
 ```python
 import optuna
 
@@ -44,7 +48,7 @@ study.optimize(objective, n_trials=100)
 print(study.best_params)
 ```
 
-これは [Optuna のランディングページ](https://optuna.org/) のQuick Startにあるサンプルコードである。たとえば、 `(x - 2) ** n` を最適化するように変えてみよう。
+たとえば、 `(x - 2) ** n` を最適化するように変えてみよう。
 
 ```python
 import optuna
@@ -60,7 +64,7 @@ def objective_variable_degree(n):
 
 こんな感じで `objective_variable_degree` が引数を受け取った結果帰ってくるのが `objective` 関数であればよい。
 
-ためしに、4次の多項式を最適化してみた。3次にしなかった理由は単に-10に近づくだけでつまらなかったので...
+ためしに、4次の多項式を最適化してみた。3次にしなかった理由は単に-10に近づくだけでつまらなかったので...。下記のコードを書いて適切に実行した。といってもサンプルから受け取る関数の名前を変えただけである。
 
 ```python
 study = optuna.create_study()
@@ -85,4 +89,4 @@ print(study.best_params)
 {'x': 1.9973094165081346}
 ```
 
-はい、無事 2.0 に近い値が出てきました。めでたしめでたし。
+無事 2.0 に近い値が出てきた。めでたしめでたし。
