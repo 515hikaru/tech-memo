@@ -2,7 +2,7 @@
 title: "Poetryについてもろもろ"
 date: 2019-11-10T00:00:00+09:00
 draft: false
-tags: ["Python", "BuildTool"]
+tags: ["Python", "BuildTool", "OSS"]
 ---
 
 最近の技術的な活動としては、Poetryのリポジトリからの通知にひたすら目を通すということをやっている。わたし自身はPoetryに結構期待をしていて、これからのPythonのプロジェクト管理のデファクトスタンダード的な立ち位置になってほしいと考えている。

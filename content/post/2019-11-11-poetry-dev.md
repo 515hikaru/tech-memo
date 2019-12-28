@@ -2,7 +2,7 @@
 title: "Poetry についてのメモ"
 date: 2019-11-11T00:00:00+09:00
 draft: false
-tags: ["Python", "BuildTool"]
+tags: ["Python", "BuildTool", "OSS"]
 ---
 
 ## `publish` できないオプションがほしい
