@@ -1,5 +1,5 @@
 ---
-title: "2016 07 22 Replace Backslash in Ruby"
+title: "sub, gsub でバックスラッシュ(\)に置換するとき"
 date: 2016-07-22T00:00:00+09:00
 draft: false
 tags: ["fromQiita", "Ruby"]
