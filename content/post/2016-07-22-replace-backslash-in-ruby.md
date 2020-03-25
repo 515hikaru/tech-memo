@@ -1,5 +1,5 @@
 ---
-title: "sub, gsub でバックスラッシュ(\)に置換するとき"
+title: "sub, gsub でバックスラッシュ(\\)に置換するとき"
 date: 2016-07-22T00:00:00+09:00
 draft: false
 tags: ["fromQiita", "Ruby"]
