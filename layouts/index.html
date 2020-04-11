@@ -2,14 +2,14 @@
 
 <div id="home-jumbotron" class="jumbotron">
   <h1>{{ .Site.Title }}</h1>
-  <p>515hikaruの個人ページへようこそ</p>
+  <p>515hikaruの個人ブログへようこそ</p>
   <p>このページでは515hikaruが学んだこと・やってみたことなどをあまり気を張らずに書いています。</p>
 
   <hr>
 
   <h2>Recent Articles</h2>
   <br>
-  {{ range first 5 .Pages.ByPublishDate.Reverse }}
+  {{ range first 5 (where .Site.Pages "Section" "post").ByPublishDate.Reverse }}
   <p>
     {{ partial "date-and-tags.html" . }}
   <br>
