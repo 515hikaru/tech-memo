@@ -34,7 +34,7 @@ pygmentsStyle = "pygments"
     name = "Diary"
     pre = "book"
     url = "/diary/"
-    weight = 2
+    weight = 3
   [[menu.nav]]
     name = "About"
     pre = "smile"
