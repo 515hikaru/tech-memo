@@ -32,7 +32,7 @@ pygmentsStyle = "pygments"
     weight = 2
   [[menu.nav]]
     name = "Diary"
-    pre = "edit"
+    pre = "book"
     url = "/diary/"
     weight = 2
   [[menu.nav]]
