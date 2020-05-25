@@ -9,7 +9,7 @@ tags: ["Release Note", "pnovel"]
 
 　以前別のブログではお知らせしましたが、日本語で小説を書くための簡易マークアップ言語のパーサーを作っています。
 
-<iframe style="width:80%;height:150px;max-width:100%;margin:0 0 1.7rem;display:block;" title="小説を書くために小説を書くための軽量マークアップ言語とそのパーサーを実装してPixiv小説用にフォーマットするツールを作ったが、肝心の小説は書いていない - Diary over Finite Fields" src="http://hatenablog.com/embed?url=https://blog.515hikaru.net/entry/2020/05/18/005920" frameborder="0" scrolling="no"></iframe>
+<iframe style="width:80%;height:150px;max-width:100%;margin:0 0 1.7rem;display:block;" title="小説を書くために小説を書くための軽量マークアップ言語とそのパーサーを実装してPixiv小説用にフォーマットするツールを作ったが、肝心の小説は書いていない - Diary over Finite Fields" src="https://hatenablog.com/embed?url=https://blog.515hikaru.net/entry/2020/05/18/005920" frameborder="0" scrolling="no"></iframe>
 
 　簡易マークアップ言語と言っていますが、まだ仕様をしっかりとは決めていません。しかし、現時点で確定していることについて下記にまとめます。
 
