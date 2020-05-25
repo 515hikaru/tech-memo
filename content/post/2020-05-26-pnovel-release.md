@@ -36,7 +36,7 @@ tags: ["Release Note", "pnovel"]
 npm config set @515hikaru:registry https://npm.pkg.github.com/515hikaru
 ```
 
-という設定をすると `npm @515hikaru/pnovel` で動かすことができます。公式に [Docker Image](https://hub.docker.com/r/515hikaru/pnovel) も作っているのでそちらがよければどうぞ。
+という設定をすると `npx @515hikaru/pnovel` で動かすことができます。公式に [Docker Image](https://hub.docker.com/r/515hikaru/pnovel) も作っているのでそちらがよければどうぞ。
 
 ## 0.4.1 リリースの内容
 
