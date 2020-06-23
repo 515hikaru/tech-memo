@@ -1,4 +1,4 @@
-#TITLE: I Was Perfect
+#+TITLE: I Was Perfect
 
 #+ATTR_HTML: :alt Netlify Status
 [[https://app.netlify.com/sites/tech-515hikaru/deploys][https://api.netlify.com/api/v1/badges/9a408c78-7414-492d-98cf-730d85bd37e9/deploy-status]]
