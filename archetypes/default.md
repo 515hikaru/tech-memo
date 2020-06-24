@@ -1,6 +1,10 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
-draft: false
+slug: ""
+description: ""
+keywords: []
+draft: true
 tags: []
+stylesheet: "post.css"
 ---
