@@ -2,7 +2,7 @@
 languageCode = "ja-jp"
 baseURL = "https://tech.515hikaru.net/"
 copyright = "© {year}"
-
+title = "I Was Perfect"
 # The value "hugo-theme-codex" is only to get the exampleSite
 # to work in this repo. Change to whatever name you gave the theme
 # when you added it. If you followed the README, you should have 
