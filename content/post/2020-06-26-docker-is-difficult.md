@@ -1,7 +1,7 @@
 +++
 title = "Dockerって難しくね"
 author = ["515hikaru"]
-date = 2020-06-26
+date = 2020-06-26T00:00:00+09:00
 tags = ["Docker"]
 draft = false
 toc = true

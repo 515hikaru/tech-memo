@@ -10,7 +10,7 @@
 ** DONE Dockerって難しくね :Docker:
    :PROPERTIES:
    :EXPORT_FILE_NAME: 2020-06-26-docker-is-difficult
-   :EXPORT_DATE: 2020-06-26
+   :EXPORT_DATE: 2020-06-26T00:00:00+09:00
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :stylesheet "post.csv"
    :END:
