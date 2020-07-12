@@ -12,7 +12,7 @@
    :EXPORT_FILE_NAME: 2020-06-26-docker-is-difficult
    :EXPORT_DATE: 2020-06-26T00:00:00+09:00
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :toc true
-   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :stylesheet "post.csv"
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :stylesheet "post.css"
    :END:
 
 *** Docker 勉強会
@@ -74,7 +74,7 @@ Git の難しさと似ている。それができれば何ができるのか、�
    :PROPERTIES:
    :EXPORT_FILE_NAME: 2020-06-27-thinking-about-OSS
    :EXPORT_DATE: 2020-06-27T17:00:00+09:00
-   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :stylesheet "post.csv"
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :stylesheet "post.css"
    :END:
 
 お気持ちの表明です。それ以上でもそれ以下でもありません。
@@ -158,3 +158,10 @@ Git の難しさと似ている。それができれば何ができるのか、�
 OSS が公共性の高いソフトウェアやウェブサイトにまで活用され始めているのは良いことだと素直に思う。だからこの流れを崩さないためにも、少しではあっても OSS に関わり続けている人ができることを考えていきたい。そのためにすべきことは、OSS を知らない人を嘲笑うことでも、事態を誤認している人に怒りを表明することでも、対立を深めることでもないはずだ。
 
 そんなことを考えている。
+
+** TODO Django Restframework Serialzier の read_only および write_only
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: 2020-07-12-restframework
+   :EXPORT_DATE: 2020-06-27T17:00:00+09:00
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :stylesheet "post.css"
+   :END:

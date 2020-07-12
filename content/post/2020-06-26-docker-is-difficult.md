@@ -5,7 +5,7 @@ date = 2020-06-26T00:00:00+09:00
 tags = ["Docker", "Working"]
 draft = false
 toc = true
-stylesheet = "post.csv"
+stylesheet = "post.css"
 +++
 
 ## Docker 勉強会 {#docker-勉強会}

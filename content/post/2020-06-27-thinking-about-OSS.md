@@ -4,7 +4,7 @@ author = ["515hikaru"]
 date = 2020-06-27T17:00:00+09:00
 tags = ["OSS"]
 draft = false
-stylesheet = "post.csv"
+stylesheet = "post.css"
 +++
 
 お気持ちの表明です。それ以上でもそれ以下でもありません。
