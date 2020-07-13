@@ -3,7 +3,7 @@ title = "Git をどう使うか"
 author = ["515hikaru"]
 date = 2020-07-13T23:00:00+09:00
 tags = ["Git"]
-draft = true
+draft = false
 stylesheet = "post.css"
 +++
 
