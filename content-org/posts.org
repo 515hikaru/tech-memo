@@ -240,3 +240,7 @@ VSCode でも指定した範囲を add することができるので稀に使�
 [[https://github.com/francescmm/GitQlient][francescmm/GitQlient: GitQlient: Multi-platform Git client written with Qt.]]
 
 そのうち GUI クライアントも使ってみるかもです。
+
+** TODO Emacs のmode-line
+
+doom-modeline を使ってみた。
