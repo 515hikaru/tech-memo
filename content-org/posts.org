@@ -165,3 +165,7 @@ OSS が公共性の高いソフトウェアやウェブサイトにまで活用�
    :EXPORT_DATE: 2020-06-27T17:00:00+09:00
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :stylesheet "post.css"
    :END:
+
+** TODO Emacs のmode-line
+
+doom-modeline を使ってみた。
