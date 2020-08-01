@@ -3,7 +3,7 @@ title = "pnovel-mode つくった"
 author = ["515hikaru"]
 date = 2020-08-02T00:00:00+09:00
 tags = ["Emacs", "pnovel"]
-draft = true
+draft = false
 stylesheet = "post.css"
 +++
 
