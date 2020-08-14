@@ -1,5 +1,5 @@
 ---
-title: "2020 08 14 Study React"
+title: "React 勉強中"
 date: 2020-08-14T12:50:12+09:00
 slug: ""
 description: "React の勉強のために『りあクト！』という技術同人誌を買って読んでいる。"
