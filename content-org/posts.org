@@ -319,3 +319,55 @@ Emacs には Generic Modes というモードがあって、次のようなこ�
 *** まとめ
 
 結構簡単に major-mode もどきは作れるので、自分でナニカフォーマットを作ったときはカジュアルに =define-generic-mode= してしまおう。
+
+** TODO Effective Python 第2版を読んでいる(1)                        :Python:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: 2020-08-07-read-effective-python-1
+   :EXPORT_DATE: 2020-08-07T00:00:00+09:00
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :stylesheet "post.css"
+   :END:
+
+*** Effective Python
+Effective Python という本がある。最近改訂版が出た。
+
+# ここにリンクをはる
+
+ずっと最近技術書読まないしなと買うのを渋っていたのだが、まぁ買うか久しぶりに、ということで買った。
+
+まだ全然読んでいないが、冒頭の1章を読んで思ったことを書く。
+
+*** 項目4 C スタイルフォーマット文字列と str.format はつかわず f 文字列を使う
+
+結論としては、
+
+#+BEGIN_SRC python
+foo = 'spam'
+'This is %s.' % foo
+
+bar = 'spam2'
+'This is {}'.format(bar)
+
+boo = 'spam3'
+f'This is {boo}'
+
+import logging
+logger = logging.getLogger()
+foo = 'spam'
+LOG_LEVEL = 'ERROR'
+logger.info('This is %s', foo)
+logger.warning(f'This is {foo}')
+logger.error(f'This is {foo}')
+logger.debug(f'This is {foo}')
+#+END_SRC
+
+*** 項目10 代入式を利用して繰り返しを防ぐ
+
+#+BEGIN_SRC python
+
+dic = {'foo': 1}
+if 'foo' in dic:
+    c = dic['foo']
+else:
+    c = 0
+
+#+END_SRC 
